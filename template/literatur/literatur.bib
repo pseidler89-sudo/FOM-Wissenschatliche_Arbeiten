@@ -1,0 +1,94 @@
+% =============================================================================
+% Literaturverzeichnis (BibLaTeX / Biber)
+% -----------------------------------------------------------------------------
+% Jede Quelle ist EIN Eintrag. Der Schlüssel (z.B. mustermann2024) wird im Text
+% mit \autocite[Vgl.][S.~X]{mustermann2024} zitiert.
+%
+% PFLICHTFELDER auf JEDEM Eintrag:
+%   - langid = {ngerman} ODER {english}   (steuert Sprache von "S."/"p." etc.)
+%   - date   = {YYYY-MM-DD} oder {YYYY}    (ISO; KEIN separates year-Feld!)
+% Bei Online-Quellen zusätzlich: url + urldate = {YYYY-MM-DD}
+%
+% Die folgenden Einträge sind BEISPIELE für jeden Quellentyp. Ersetze sie durch
+% deine echten Quellen. Nicht zitierte Einträge erscheinen NICHT im PDF -- sie
+% dienen hier als kopierfertige Vorlagen.
+% =============================================================================
+
+% --- Buch / Monographie -------------------------------------------------------
+@book{mustermann2024,
+  author    = {Mustermann, Max},
+  title     = {Titel des Buches},
+  subtitle  = {Optionaler Untertitel},
+  edition   = {3},
+  publisher = {Musterverlag},
+  location  = {Musterstadt},
+  date      = {2024},
+  isbn      = {978-3-16-148410-0},
+  langid    = {ngerman},
+}
+
+% --- Bericht / Studie (Institution als Autor) --------------------------------
+@report{musterinstitut2023,
+  author      = {{Musterinstitut für Wirtschaftsforschung}},
+  title       = {Titel der Studie},
+  institution = {Musterinstitut},
+  type        = {Forschungsbericht},
+  number      = {12},
+  date        = {2023},
+  langid      = {ngerman},
+}
+
+% --- Online-Quelle / Webseite / Behörde --------------------------------------
+% url + urldate sind hier PFLICHT. Blog-Posts ebenfalls als @online (nicht @article).
+@online{musterbehoerde2025,
+  author  = {{Bundesamt für Sicherheit in der Informationstechnik}},
+  title   = {Titel der Online-Veröffentlichung},
+  date    = {2025-03-01},
+  url     = {https://www.example.org/dokument},
+  urldate = {2026-01-15},
+  langid  = {ngerman},
+}
+
+% --- Fachartikel (Zeitschrift) -----------------------------------------------
+@article{musterautor2024,
+  author  = {Musterfrau, Erika},
+  title   = {Titel des Aufsatzes},
+  journal = {Zeitschrift für Musterforschung},
+  volume  = {42},
+  number  = {3},
+  pages   = {101--118},
+  date    = {2024-06-01},
+  doi     = {10.1000/musterdoi},
+  langid  = {ngerman},
+}
+
+% --- Beitrag in Sammelband / Kommentar ---------------------------------------
+@incollection{musterkommentar2022,
+  author    = {Musterkommentator, Klaus},
+  title     = {Titel des Beitrags},
+  booktitle = {Titel des Sammelbands},
+  editor    = {Herausgeber, Heinz},
+  publisher = {Musterverlag},
+  location  = {Musterstadt},
+  pages     = {55--80},
+  date      = {2022},
+  langid    = {ngerman},
+}
+
+% --- Gesetz / Verordnung -----------------------------------------------------
+@legislation{musterverordnung2024,
+  title   = {Verordnung (EU) 2024/0000 über ein Musterthema},
+  date    = {2024-07-12},
+  note    = {ABl. L 000 vom 12.07.2024, S.~1--94},
+  langid  = {ngerman},
+}
+
+% --- Gerichtsentscheidung ----------------------------------------------------
+@jurisdiction{mustergericht2025,
+  institution = {Bundesgerichtshof (BGH)},
+  title       = {Urteil vom 01.01.2025},
+  date        = {2025-01-01},
+  number      = {1 StR 000/24},
+  note        = {NJW 2025, S.~123},
+  langid      = {ngerman},
+}

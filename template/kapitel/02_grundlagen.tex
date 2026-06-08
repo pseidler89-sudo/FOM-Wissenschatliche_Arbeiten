@@ -1,0 +1,56 @@
+% =============================================================================
+% Kapitel 2: Grundlagen
+% -----------------------------------------------------------------------------
+% Hier werden die Begriffe und Konzepte geklärt, die der Hauptteil voraussetzt.
+% Beachte: Zwischen \section und der ersten \subsection stehen 2--4 Sätze
+% (Kapitel-Einleitung), die den Inhalt zusammenfassen und an Kapitel 1 anknüpfen.
+% =============================================================================
+\section{Grundlagen}
+\label{sec:grundlagen}
+
+Dieses Kapitel klärt die zentralen Begriffe der Arbeit und ordnet sie in den
+Forschungsstand ein. Es schafft damit die Grundlage für die Analyse in
+Kapitel~\ref{sec:hauptteil}. Behandelt werden zunächst die begrifflichen
+Grundlagen und anschließend der relevante Stand der Forschung.
+
+% --- 2.1 ---
+\subsection{Begriffliche Grundlagen}
+\label{subsec:begriffe}
+
+Definiere hier die Schlüsselbegriffe. Eine Definition wird belegt:
+Ein \ac{KMU} ist nach gängiger Definition \dots\autocite[Vgl.][S.~3]{musterinstitut2023}
+
+% --- 2.2 ---
+\subsection{Stand der Forschung}
+\label{subsec:forschungsstand}
+
+Hier ordnest du die wichtigsten Quellen ein und zeigst, wo deine Arbeit
+ansetzt. So bindest du eine Abbildung ein (Datei liegt unter abbildungen/):
+
+% Beispiel fuer eine Abbildung -- erst einkommentieren, wenn ein Bild vorliegt,
+% und im main.tex \listoffigures aktivieren.
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.8\textwidth]{beispielbild.png}
+%   \caption{Beschreibung der Abbildung}
+%   \label{fig:beispiel}
+% \end{figure}
+% Im Text immer referenzieren: Abbildung~\ref{fig:beispiel} zeigt \dots
+
+So bindest du eine Tabelle ein:
+
+\begin{table}[H]
+  \centering
+  \caption{Beispielhafte Gegenüberstellung}
+  \label{tab:beispiel}
+  \begin{tabularx}{\textwidth}{@{}lX@{}}
+    \toprule
+    \textbf{Kriterium} & \textbf{Beschreibung} \\
+    \midrule
+    Merkmal A & Erläuterung zu Merkmal A \\
+    Merkmal B & Erläuterung zu Merkmal B \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\noindent Tabelle~\ref{tab:beispiel} stellt die Kriterien gegenüber.

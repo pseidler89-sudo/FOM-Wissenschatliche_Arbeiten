@@ -1,0 +1,15 @@
+# =============================================================================
+# Docker Compose – FOM LaTeX Build
+#
+# Nutzung:
+#   docker compose up          → PDF kompilieren (main.tex → main.pdf)
+#   docker compose run latex tectonic --keep-intermediates main.tex
+#                              → Mit Zwischendateien (für Debugging)
+# =============================================================================
+services:
+  latex:
+    build: .
+    volumes:
+      - .:/data
+    command: ["-X", "compile", "main.tex"]
+    working_dir: /data

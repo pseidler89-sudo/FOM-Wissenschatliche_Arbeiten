@@ -1,0 +1,49 @@
+# =============================================================================
+# .gitignore (Projekt-Wurzel)
+# Hält Build-Hilfsdateien und System-/Editor-Müll aus dem Repository.
+# Die Vorlage hat zusätzlich eine eigene template/.gitignore.
+# =============================================================================
+
+# LaTeX-Build-Artefakte
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
+*.slg
+*.syi
+*.syg
+*.xdv
+
+# Generierte PDF der Vorlage (wird aus den Quellen neu gebaut).
+# Bewusst abgelegte Versionen unter template/releases/ bleiben erlaubt.
+template/main.pdf
+
+# Betriebssystem
+.DS_Store
+Thumbs.db
+
+# Editoren / IDEs
+*.swp
+*.swo
+*~
+.vscode/
+.idea/

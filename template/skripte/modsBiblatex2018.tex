@@ -1,0 +1,19 @@
+% =============================================================================
+% BibLaTeX-Modifikationen für FOM 2018/2024 Zitationsstil
+% Anpassungen für ext-authoryear-ibid
+% =============================================================================
+
+% Nachnamen in Kapitälchen im Literaturverzeichnis (optional)
+% \renewcommand*{\mkbibnamefamily}[1]{\textsc{#1}}
+
+% Doppelpunkt nach Autor statt Punkt
+\renewcommand*{\labelnamepunct}{\addcolon\space}
+
+% "Vgl." als Standard-Prenote
+\renewcommand{\mkccitation}[1]{ #1}
+
+% URL-Datum-Präfix
+\DeclareFieldFormat{urldate}{(Zugriff am: #1)}
+
+% Online-Quellen: URL anzeigen
+\DeclareFieldFormat[online]{url}{\url{#1}}

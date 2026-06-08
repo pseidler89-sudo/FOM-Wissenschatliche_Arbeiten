@@ -1,0 +1,297 @@
+% =============================================================================
+% FOM Seminararbeit – Wirtschaftsinformatik / IT-Recht
+% Template basierend auf FOM-Leitfaden V1.4 (März 2024)
+% und Jäger/Kümpel/Seng Leitfaden (Januar 2024)
+% =============================================================================
+\documentclass[12pt,oneside,titlepage,listof=totoc,bibliography=totoc]{scrartcl}
+
+% ---------------------------------------------------------------------------
+% Sprache
+% ---------------------------------------------------------------------------
+\usepackage[ngerman]{babel}
+\usepackage[babel,german=quotes]{csquotes}
+
+% ---------------------------------------------------------------------------
+% Schriftart: Times New Roman (Leitfaden: TNR 12pt)
+% TeX Gyre Termes = metrisch identischer TNR-Klon
+% ---------------------------------------------------------------------------
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Termes}
+
+% ---------------------------------------------------------------------------
+% Seitengeometrie (Leitfaden S. 15 / Jäger S. 2)
+%   Oben: 4cm, Unten: 2cm, Links: 4cm, Rechts: 2cm
+%   Kopfzeile 2cm vom Rand, Fußzeile 2cm vom Rand
+% ---------------------------------------------------------------------------
+\usepackage[
+  a4paper,
+  left=4cm,
+  right=2cm,
+  top=4cm,
+  bottom=2cm,
+  headheight=14pt,
+  headsep=1cm
+]{geometry}
+
+% ---------------------------------------------------------------------------
+% Zeilenabstand 1,5-zeilig (Leitfaden S. 16)
+% ---------------------------------------------------------------------------
+\usepackage{setspace}
+\onehalfspacing
+
+% ---------------------------------------------------------------------------
+% Absatzformatierung (Leitfaden: vor 0pt, nach 6pt, Blocksatz)
+% ---------------------------------------------------------------------------
+\setlength{\parindent}{0mm}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+
+% ---------------------------------------------------------------------------
+% Kopf-/Fußzeile (Seitenzahl oben mittig, Leitfaden S. 3)
+% ---------------------------------------------------------------------------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+% ---------------------------------------------------------------------------
+% Grafik & Farben
+% ---------------------------------------------------------------------------
+\usepackage{graphicx}
+\graphicspath{{./abbildungen/}}
+\usepackage[table]{xcolor}
+\usepackage{float}   % stellt die Float-Option [H] bereit (exakte Platzierung)
+\usepackage[capposition=top]{floatrow}
+
+% ---------------------------------------------------------------------------
+% Beschriftungen (Leitfaden: linksbündig, fett)
+% ---------------------------------------------------------------------------
+\usepackage[
+  singlelinecheck=false,
+  labelfont=bf,
+  font=bf,
+  aboveskip=12pt,
+  belowskip=6pt
+]{caption}
+
+% ---------------------------------------------------------------------------
+% Tabellen
+% ---------------------------------------------------------------------------
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{booktabs}
+
+% ---------------------------------------------------------------------------
+% Listen
+% ---------------------------------------------------------------------------
+\usepackage{enumitem}
+
+% ---------------------------------------------------------------------------
+% Mathematik & Symbole
+% ---------------------------------------------------------------------------
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% ---------------------------------------------------------------------------
+% Quellcode-Listings
+% ---------------------------------------------------------------------------
+\usepackage{listings}
+\lstset{
+  numbers=left,
+  numberstyle=\tiny,
+  numbersep=5pt,
+  breaklines=true,
+  showstringspaces=false,
+  frame=l,
+  xleftmargin=5pt,
+  xrightmargin=5pt,
+  basicstyle=\ttfamily\scriptsize,
+  stepnumber=1,
+  commentstyle=\color{gray},
+  keywordstyle=\color{blue},
+  stringstyle=\color{purple}
+}
+
+% ---------------------------------------------------------------------------
+% Fußnoten (einzeilig, 10pt, Leitfaden S. 18)
+% ---------------------------------------------------------------------------
+\usepackage[hang,multiple]{footmisc}
+\setlength{\footnotemargin}{1em}
+
+% ---------------------------------------------------------------------------
+% Silbentrennung (Leitfaden S. 17)
+% ---------------------------------------------------------------------------
+\usepackage{microtype}
+\hyphenpenalty=5000
+\exhyphenpenalty=5000
+\hbadness=10000
+\vbadness=10000
+\hfuzz=40pt
+\vfuzz=40pt
+
+% ---------------------------------------------------------------------------
+% Abkürzungsverzeichnis
+% ---------------------------------------------------------------------------
+\usepackage[printonlyused]{acronym}
+
+% ---------------------------------------------------------------------------
+% Verhinderung von Schusterjungen/Hurenkinder
+% ---------------------------------------------------------------------------
+\usepackage[all]{nowidow}
+\setlength{\marginparwidth}{2cm}
+
+% ---------------------------------------------------------------------------
+% Literaturverzeichnis – BibLaTeX/Biber
+% Stil: ext-authoryear-ibid (FOM 2018/2024 Fußnoten-Stil)
+% ---------------------------------------------------------------------------
+\usepackage{url}
+\urlstyle{same}
+\usepackage{xurl}
+\usepackage[
+  backend=biber,
+  style=ext-authoryear-ibid,
+  maxcitenames=3,
+  maxbibnames=999,
+  mergedate=false,
+  date=iso,
+  seconds=true,
+  urldate=iso,
+  innamebeforetitle,
+  dashed=false,
+  autocite=footnote,
+  doi=false,
+  useprefix=true,
+  mincrossrefs=1
+]{biblatex}
+\addbibresource{literatur/literatur.bib}
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+\setcounter{biburlnumpenalty}{9000}
+
+% Einzeiliger Zeilenabstand im Literaturverzeichnis (Leitfaden S. 14)
+\AtBeginBibliography{\singlespacing\sloppy}
+
+% Anpassungen für dt. BibLaTeX (et al. statt u. a.)
+\DefineBibliographyStrings{ngerman}{
+  andothers = {{et\,al\adddot}},
+}
+
+% Lade FOM-spezifische BibLaTeX-Modifikationen
+\input{skripte/modsBiblatex2018}
+
+% ---------------------------------------------------------------------------
+% Hyperlinks (PDF-Metadaten)
+% ---------------------------------------------------------------------------
+\usepackage[hyperfootnotes=false]{hyperref}
+\hypersetup{
+  colorlinks=true,
+  breaklinks=true,
+  linkcolor=black,
+  citecolor=black,
+  menucolor=black,
+  urlcolor=black,
+  linktoc=all,
+  bookmarksnumbered=false,
+  pdfpagemode=UseOutlines,
+}
+
+% ---------------------------------------------------------------------------
+% Metadaten (werden in skripte/meta.tex definiert)
+% ---------------------------------------------------------------------------
+\input{skripte/meta}
+
+% ---------------------------------------------------------------------------
+% Glossar (optional)
+% ---------------------------------------------------------------------------
+\usepackage{glossaries}
+\glstoctrue
+\makenoidxglossaries
+\input{abkuerzungen/glossar}
+
+% ---------------------------------------------------------------------------
+% Anhang-Paket
+% ---------------------------------------------------------------------------
+\usepackage{appendix}
+
+% ---------------------------------------------------------------------------
+% Weitere Gliederungsebene (paragraph als nummerierte Ebene)
+% ---------------------------------------------------------------------------
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+% ============================= DOKUMENT START ==============================
+\begin{document}
+
+\pagenumbering{Roman}
+
+% --- Titelseite ---
+\input{kapitel/titelseite}
+
+% --- Inhaltsverzeichnis ---
+\setcounter{page}{2}
+\tableofcontents
+\newpage
+
+% --- Abbildungsverzeichnis ---
+% Erst entkommentieren (% entfernen), wenn die Arbeit Abbildungen enthaelt.
+%\listoffigures
+%\newpage
+
+% --- Tabellenverzeichnis ---
+% Erst entkommentieren, wenn die Arbeit Tabellen enthaelt.
+%\listoftables
+%\newpage
+
+% --- Abkürzungsverzeichnis ---
+\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
+\input{abkuerzungen/acronyms}
+\newpage
+
+% --- Glossar (optional) ---
+% \printnoidxglossaries
+% \newpage
+
+% ============================= TEXTTEIL ====================================
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+% Kapitel einbinden
+% -------------------------------------------------------------------------
+% Jede Datei unter kapitel/ ist EIN Kapitel. Neues Kapitel anlegen:
+%   1. Datei kapitel/05_xyz.tex erstellen (mit \section{...} beginnen)
+%   2. Hier eine Zeile \input{kapitel/05_xyz} ergaenzen
+% Die Reihenfolge HIER bestimmt die Reihenfolge im Dokument.
+% -------------------------------------------------------------------------
+\input{kapitel/01_einleitung}
+\newpage
+\input{kapitel/02_grundlagen}
+\newpage
+\input{kapitel/03_hauptteil}
+\newpage
+\input{kapitel/04_fazit}
+
+% ============================= NACHSPANN ===================================
+\newpage
+
+% --- Literaturverzeichnis ---
+\printbibliography[nottype=online,heading=bibintoc,title={Literaturverzeichnis}]
+\newpage
+\printbibliography[type=online,heading=subbibliography,title={Internetquellen}]
+
+% --- KI-Verzeichnis (PFLICHT seit 2024) ---
+\newpage
+\input{verzeichnisse/ki_verzeichnis}
+
+% --- Anhang ---
+\newpage
+\input{anhang/anhang}
+
+% --- Eigenständigkeitserklärung ---
+% Manche Prüfungsämter verlangen die Erklärung digital im Upload-System,
+% andere als Teil der PDF. Wenn sie ins Dokument soll: die zwei Zeilen
+% unten entkommentieren (% entfernen).
+% \newpage
+% \input{kapitel/erklaerung}
+
+\end{document}
