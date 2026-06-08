@@ -24,6 +24,15 @@ KI-Verzeichnis). Du musst LaTeX **nicht** verstehen, um sie zu nutzen.
    Quellentyp sind schon drin).
 5. **PDF bauen** – siehe unten. Ergebnis ist `main.pdf`.
 
+> ℹ️ **Die Kapitel sind nur ein Beispielgerüst.** `01_einleitung`,
+> `02_grundlagen`, `03_hauptteil`, `04_fazit` zeigen Aufbau und Befehle – sie
+> sind **kein Pflicht-Schema**. Lösche, benenne um oder ergänze Kapitel, wie es
+> deine Forschungsfrage verlangt (z. B. eigene Analyse- und Fallstudien-Kapitel,
+> oder bei empirischen Arbeiten Methoden/Ergebnisse). Welche Struktur zu welchem
+> Arbeitstyp passt, erklärt
+> [`../anleitung/06_gliederung.md`](../anleitung/06_gliederung.md). Beim
+> Hinzufügen/Entfernen nur die `\input{...}`-Zeilen in `main.tex` anpassen.
+
 ---
 
 ## PDF bauen – drei Wege

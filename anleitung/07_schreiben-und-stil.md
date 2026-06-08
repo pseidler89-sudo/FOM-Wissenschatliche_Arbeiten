@@ -65,17 +65,30 @@ an. Typische Inhalte:
 
 KI-Texte haben verräterische Muster. Wenn du KI zum Umformulieren nutzt, musst
 du diese Muster aktiv **heraus**redigieren. Orientierung bieten die bekannten
-„Signs of AI writing“:
+„Signs of AI writing“ (Wikipedia) – die wichtigsten:
 
-- **Bot-Begeisterung:** „entscheidender Meilenstein“, „unterstreicht
-  eindrucksvoll“, „es ist wichtig anzumerken“, „pivotal“ → streichen.
-- **Künstliche Symmetrie:** lauter gleich lange Absätze, ständige
-  Dreier-Aufzählungen, das „Nicht nur …, sondern auch …“-Muster → Satz- und
-  Absatzlängen **natürlich variieren**.
-- **LinkedIn-Sprache:** „Schauen wir uns nun an …“, „In der echten Welt zählt
-  …“ → raus; akademisch, aber nicht verschachtelt.
+- **Bot-Begeisterung & Schwungvokabular:** „entscheidender Meilenstein“,
+  „spielt eine zentrale Rolle“, „es ist wichtig zu bemerken“, „maßgeblich“,
+  „nahtlos“, „robust“ (und die englischen Durchrutscher *delve, pivotal,
+  leverage, tapestry*) → streichen oder durch das schlichte Fachwort ersetzen.
+- **Vage Autoritäten:** „Experten argumentieren …“, „Studien zeigen …“ ohne
+  Fundstelle → belegen oder streichen (hier sitzen oft **halluzinierte
+  Quellen**).
+- **Künstliche Symmetrie:** lauter gleich lange Absätze, Dauer-Dreierlisten, das
+  „Nicht nur …, sondern auch …“-Muster, inhaltsleere Partizip-Anhängsel
+  („…, wodurch … gewährleistet wird“) → Satz- und Absatzlängen **natürlich
+  variieren**, Anhängsel streichen.
+- **LinkedIn-/Plauder-Sprache:** „Schauen wir uns nun an …“, „Sicherlich!“,
+  „Ich hoffe, das hilft“ → raus.
+- **Copy-Paste-Artefakte:** Markdown-Reste (`**fett**`, `#`, `---`), Emoji,
+  übermäßige Halbgeviertstriche und technische Spuren wie `oaicite`/`turn0…` →
+  vollständig entfernen.
 - **Moralisierende Schluss-Sätze**, die universelle Wahrheiten verkünden →
   sachlich bleiben.
+
+> 📋 **Vollständige, abhakbare Liste:**
+> [`vorlagen/ki-stilmerkmale.md`](../vorlagen/ki-stilmerkmale.md) – führe deinen
+> Text einmal pro Kapitel dagegen (Strg+F gegen die markierten Wörter).
 
 > **Die Falle des „Humanizers“:** Wer KI-Text einfach durch ein „mach das
 > menschlicher“-Tool jagt, bekommt oft *kumpelhaft-flapsig* statt *akademisch*.

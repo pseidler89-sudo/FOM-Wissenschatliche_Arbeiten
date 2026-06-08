@@ -42,6 +42,7 @@
 ## 6. Verbotsliste (meine Anti-Patterns)
 
 > Konkrete Wörter/Muster, die in **meinem** Text nichts zu suchen haben.
+> Vollständige KI-Stilmerkmal-Liste: [`ki-stilmerkmale.md`](ki-stilmerkmale.md).
 
 - Marketing-Sprech: „Lösung“, „innovativ“, „ganzheitlich“, „einzigartig“, …
 - KI-Floskeln: „entscheidender Meilenstein“, „es ist wichtig anzumerken“,

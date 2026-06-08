@@ -39,7 +39,7 @@ oder Masterarbeit – **technisch versiert oder nicht.**
 | Ordner | Was drin ist |
 |:--|:--|
 | 📘 **[`anleitung/`](anleitung/)** | Der ganze Prozess in 12 kurzen Kapiteln (das *Warum* und *Wie*) |
-| 📝 **[`vorlagen/`](vorlagen/)** | Kopierfertige Hilfen: Thesenpapier, KI-Prompts, Recherche-Log, Stilprofil, Abgabe-Checkliste |
+| 📝 **[`vorlagen/`](vorlagen/)** | Kopierfertige Hilfen: Thesenpapier, KI-Prompts, Recherche-Log, Stilprofil, KI-Stilmerkmale-Checkliste, Abgabe-Checkliste |
 | 📄 **[`template/`](template/)** | Die fertige, FOM-konforme LaTeX-Vorlage – baut sofort eine saubere PDF |
 
 ---
@@ -105,6 +105,12 @@ ifes / Bibliotheks-Leitfaden) zusammen – als Orientierung, nicht als Ersatz.
 **Individuelle Vorgaben deiner Prüfer:innen haben immer Vorrang.**
 
 ---
+
+## Weiterentwicklung
+
+Geplant ist eine **Website** (GitHub Pages), die diese Anleitung noch
+zugänglicher macht – mit Suche, „Open in Overleaf“-Knopf und Phasen-Wegweiser.
+Das ausgearbeitete Konzept dazu: [`KONZEPT_WEBSITE.md`](KONZEPT_WEBSITE.md).
 
 ## Herkunft & Dank
 
