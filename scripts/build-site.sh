@@ -15,13 +15,17 @@ SITE_DIR="${1:-_site}"
 rm -rf docs
 mkdir -p docs
 
-cp README.md          docs/index.md
+cp web/index.md       docs/index.md
 cp -r anleitung       docs/anleitung
 cp -r vorlagen        docs/vorlagen
 cp -r template        docs/template
 cp CONTRIBUTING.md    docs/CONTRIBUTING.md
 cp KONZEPT_WEBSITE.md docs/KONZEPT_WEBSITE.md
+cp FAQ.md             docs/FAQ.md
 cp LICENSE            docs/LICENSE
+
+# "Open in Overleaf" / Download: Vorlage als ZIP buendeln (main.tex im ZIP-Root).
+( cd template && zip -qr ../docs/template.zip . -x './releases/*' )
 
 mkdocs build --site-dir "$SITE_DIR"
 echo "Website gebaut nach: $SITE_DIR"

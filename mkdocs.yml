@@ -38,6 +38,7 @@ theme:
         icon: material/weather-sunny
         name: Zu hellem Design wechseln
   features:
+    - navigation.tabs
     - navigation.sections
     - navigation.top
     - navigation.tracking
@@ -45,6 +46,7 @@ theme:
     - search.suggest
     - search.highlight
     - content.code.copy
+    - content.code.annotate
     - toc.follow
 
 repo_url: https://github.com/pseidler89-sudo/FOM-Wissenschatliche_Arbeiten
@@ -63,6 +65,15 @@ markdown_extensions:
       anchor_linenums: true
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/pseidler89-sudo/FOM-Wissenschatliche_Arbeiten
+      name: Projekt auf GitHub
 
 nav:
   - Start: index.md
@@ -88,5 +99,6 @@ nav:
     - Abgabe-Checkliste: vorlagen/review-checkliste.md
   - LaTeX-Vorlage: template/README.md
   - Mehr:
+    - FAQ: FAQ.md
     - Website-Konzept: KONZEPT_WEBSITE.md
     - Mitmachen: CONTRIBUTING.md
