@@ -123,4 +123,4 @@ Was genau, sagt dein Leitfaden – die typischen Pflichten:
 bis zur abgabefertigen, versionierten PDF gebracht – formal sauber und mit KI
 als ehrlichem Werkzeug, nicht als heimlichem Ghostwriter.
 
-**Zurück zum:** [Überblick](00_ueberblick.md) · [Repo-Start](../README.md)
+**Zurück zum:** [Überblick](00_ueberblick.md)

@@ -1,0 +1,60 @@
+# =============================================================================
+# Baut die MkDocs-Material-Website und veröffentlicht sie auf GitHub Pages.
+#
+# EINMALIGE EINRICHTUNG (durch den Repo-Inhaber):
+#   Repo → Settings → Pages → "Build and deployment" → Source: GitHub Actions.
+# Danach läuft das Deployment bei jedem Push auf main automatisch.
+# =============================================================================
+name: Website (MkDocs) deployen
+
+on:
+  push:
+    branches: [main]
+    # Nur bauen, wenn sich relevante Inhalte ändern:
+    paths:
+      - "anleitung/**"
+      - "vorlagen/**"
+      - "template/**"
+      - "README.md"
+      - "CONTRIBUTING.md"
+      - "KONZEPT_WEBSITE.md"
+      - "mkdocs.yml"
+      - "requirements-docs.txt"
+      - "scripts/build-site.sh"
+      - ".github/workflows/deploy-docs.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: MkDocs Material installieren (gepinnte Versionen)
+        run: pip install -r requirements-docs.txt
+      - name: Website bauen
+        run: bash scripts/build-site.sh _site
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

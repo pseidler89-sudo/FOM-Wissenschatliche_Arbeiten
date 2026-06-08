@@ -6,7 +6,7 @@ KI-Verzeichnis). Du musst LaTeX **nicht** verstehen, um sie zu nutzen.
 
 > Die ausführliche Schritt-für-Schritt-Erklärung – von der Forschungsfrage
 > über die KI-gestützte Recherche bis zur fertigen PDF – steht in
-> [`../anleitung/`](../anleitung/). Diese Datei hier ist die Kurzanleitung
+> [`../anleitung/`](../anleitung/00_ueberblick.md). Diese Datei hier ist die Kurzanleitung
 > nur zur Vorlage.
 
 ---

@@ -8,6 +8,9 @@ versionierten PDF. Gebaut so, dass es auch ohne Technikkenntnisse funktioniert.*
 > haben. Wo es technischer wird, gibt es immer einen einfachen Weg (meist über
 > [Overleaf](anleitung/09_latex-bauen.md)).
 
+📖 **Als Website lesen (mit Suche & Navigation):**
+<https://pseidler89-sudo.github.io/FOM-Wissenschatliche_Arbeiten/>
+
 ---
 
 ## Worum geht es hier?
@@ -38,9 +41,9 @@ oder Masterarbeit – **technisch versiert oder nicht.**
 
 | Ordner | Was drin ist |
 |:--|:--|
-| 📘 **[`anleitung/`](anleitung/)** | Der ganze Prozess in 12 kurzen Kapiteln (das *Warum* und *Wie*) |
-| 📝 **[`vorlagen/`](vorlagen/)** | Kopierfertige Hilfen: Thesenpapier, KI-Prompts, Recherche-Log, Stilprofil, KI-Stilmerkmale-Checkliste, Abgabe-Checkliste |
-| 📄 **[`template/`](template/)** | Die fertige, FOM-konforme LaTeX-Vorlage – baut sofort eine saubere PDF |
+| 📘 **[`anleitung/`](anleitung/00_ueberblick.md)** | Der ganze Prozess in 12 kurzen Kapiteln (das *Warum* und *Wie*) |
+| 📝 **[`vorlagen/`](vorlagen/THESE_VORLAGE.md)** | Kopierfertige Hilfen: Thesenpapier, KI-Prompts, Recherche-Log, Stilprofil, KI-Stilmerkmale-Checkliste, Abgabe-Checkliste |
+| 📄 **[`template/`](template/README.md)** | Die fertige, FOM-konforme LaTeX-Vorlage – baut sofort eine saubere PDF |
 
 ---
 

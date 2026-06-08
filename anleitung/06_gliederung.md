@@ -20,7 +20,7 @@ das Thema durchdrungen hast.
 ## Der bewährte Grundaufbau
 
 Die meisten FOM-Arbeiten folgen dieser funktionalen Logik (so auch die
-[Vorlage](../template/)):
+[Vorlage](../template/README.md)):
 
 ```
 1. Einleitung      Problem → Forschungsfrage → Methodik & Aufbau

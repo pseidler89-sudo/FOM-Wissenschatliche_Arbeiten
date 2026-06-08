@@ -1,0 +1,5 @@
+# Abhängigkeiten für den Website-Build (gepinnt für reproduzierbare Builds).
+# Geprüft und lauffähig mit dieser Kombination. Zum Aktualisieren die Versionen
+# erhöhen und einmal `bash scripts/build-site.sh` lokal testen.
+mkdocs==1.6.1
+mkdocs-material==9.7.6

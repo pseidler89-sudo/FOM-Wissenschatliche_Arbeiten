@@ -3,8 +3,17 @@
 > Konzept, wie aus diesem Repo eine **richtig intuitive Website** wird, die es
 > FOM-Studierenden so einfach wie möglich macht, eine wissenschaftliche Arbeit
 > zu schreiben. Entscheidungsreif aufbereitet – mit Empfehlung, Architektur,
-> Feature-Ideen und einem Phasenplan. **Noch nicht umgesetzt**; dieses Dokument
-> ist die Grundlage für die Entscheidung, *womit* und *wie* wir bauen.
+> Feature-Ideen und einem Phasenplan.
+>
+> **Update – Stufe 1 (MVP) ist umgesetzt.** Gewählt wurde **MkDocs Material**
+> (statt Just the Docs), weil der Fokus auf maximaler Lesbarkeit/„cool &
+> intuitiv“ liegt und der Build vollständig automatisiert ist (GitHub Actions →
+> GitHub Pages). Konfiguration im Repo-Root: `mkdocs.yml`, Build-Skript
+> `scripts/build-site.sh`, Deploy-Workflow `.github/workflows/deploy-docs.yml`.
+> Die Inhalte bleiben Single Source im Repo-Root und werden im Build nach
+> `docs/` gesammelt. **Einmaliger Schritt durch den Inhaber:** Repo → Settings →
+> Pages → Source: *GitHub Actions*. Die folgenden Stufen (Phasen-Stepper,
+> Open-in-Overleaf-Knopf, eigene Domain) bleiben als Ausbau offen.
 
 ---
 

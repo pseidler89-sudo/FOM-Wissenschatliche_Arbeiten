@@ -2,7 +2,7 @@
 
 > Phase 2. Hier lernst du **alle** formalen Regeln der FOM kennen – und vor
 > allem das *Warum* dahinter. Die gute Nachricht: Die Vorlage in
-> [`template/`](../template/) hat fast alles davon schon korrekt eingebaut. Du
+> [`template/`](../template/README.md) hat fast alles davon schon korrekt eingebaut. Du
 > musst die Regeln also nicht *umsetzen* – aber du solltest sie *kennen*, denn
 > formale Fehler kosten Note, und manche Vorgaben musst du selbst beachten.
 

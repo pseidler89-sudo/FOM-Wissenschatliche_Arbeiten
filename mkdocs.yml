@@ -1,0 +1,92 @@
+# =============================================================================
+# MkDocs-Konfiguration für die Website (GitHub Pages, Theme: Material)
+# -----------------------------------------------------------------------------
+# Die Inhalte bleiben als Single Source im Repo-Root (anleitung/, vorlagen/,
+# template/, README.md ...). Der GitHub-Actions-Workflow
+# (.github/workflows/deploy-docs.yml) kopiert sie vor dem Build nach docs/.
+# Lokal bauen (optional):
+#   pip install mkdocs-material
+#   bash scripts/build-site.sh   (sammelt docs/ und ruft mkdocs build auf)
+# =============================================================================
+
+site_name: FOM – Wissenschaftliche Arbeiten mit KI
+site_description: >-
+  Anleitung und LaTeX-Vorlage für wissenschaftliche Arbeiten an der FOM –
+  von der Forschungsfrage bis zur fertigen PDF, mit KI, aber richtig.
+site_url: https://pseidler89-sudo.github.io/FOM-Wissenschatliche_Arbeiten/
+docs_dir: docs
+
+theme:
+  name: material
+  language: de
+  icon:
+    logo: material/school
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Zu dunklem Design wechseln
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Zu hellem Design wechseln
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+
+repo_url: https://github.com/pseidler89-sudo/FOM-Wissenschatliche_Arbeiten
+repo_name: FOM-Wissenschatliche_Arbeiten
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.tabbed:
+      alternate_style: true
+
+nav:
+  - Start: index.md
+  - Anleitung:
+    - Überblick: anleitung/00_ueberblick.md
+    - Forschungsfrage: anleitung/01_forschungsfrage.md
+    - Formalia: anleitung/02_formalia.md
+    - KI-Werkzeuge: anleitung/03_ki-werkzeuge.md
+    - Quellenrecherche: anleitung/04_quellenrecherche.md
+    - Große Volltexte: anleitung/05_grosse-texte.md
+    - Gliederung: anleitung/06_gliederung.md
+    - Schreiben & Stil: anleitung/07_schreiben-und-stil.md
+    - Zitieren: anleitung/08_zitieren.md
+    - LaTeX bauen: anleitung/09_latex-bauen.md
+    - Versionieren: anleitung/10_versionierung.md
+    - Qualität & Abgabe: anleitung/11_qualitaet-und-abgabe.md
+  - Werkzeugkasten:
+    - Thesenpapier: vorlagen/THESE_VORLAGE.md
+    - KI-Prompts: vorlagen/recherche-prompts.md
+    - Recherche-Log: vorlagen/recherche-log_VORLAGE.md
+    - Stilprofil: vorlagen/stilprofil_VORLAGE.md
+    - KI-Stilmerkmale: vorlagen/ki-stilmerkmale.md
+    - Abgabe-Checkliste: vorlagen/review-checkliste.md
+  - LaTeX-Vorlage: template/README.md
+  - Mehr:
+    - Website-Konzept: KONZEPT_WEBSITE.md
+    - Mitmachen: CONTRIBUTING.md
