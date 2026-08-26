@@ -136,9 +136,30 @@ Vorlage: [`vorlagen/recherche-log_VORLAGE.md`](../vorlagen/recherche-log_VORLAGE
 Ordne jede Quelle einer Kategorie zu – eine gute Arbeit mischt sie bewusst:
 
 - **Primär:** Gesetze, Verordnungen, Urteile, amtliche Schreiben, Originaldaten
-- **Sekundär:** Kommentare, Fach-/Lehrbücher
+- **Sekundär:** Kommentare, Fachbücher, Monographien, Dissertationen – der
+  Kern deiner Belegbasis (Theorie, Begriffsarbeit, Einordnung)
 - **Fachartikel:** peer-reviewed Journals
+- **Tertiär:** zusammenfassende Überblickswerke wie Lehrbücher – gut für den
+  Einstieg und für Definitionen, **nicht** als Basis deiner Hauptargumente.
+  (Lexika/Wikipedia bleiben ganz tabu, siehe unten.)
+- **Graue Literatur:** nicht formal publizierte Quellen – Working Papers,
+  White Papers, Unternehmensberichte. Nützlich für Aktuelles, aber
+  **begründungspflichtig**: Autorität und Nachvollziehbarkeit besonders streng
+  prüfen.
 - **Praxis:** Behörden-Stellungnahmen, seriöse Branchenstudien, Fach-Blogs
+
+### Bias-Schnellcheck deiner Quellenliste
+
+Wenn die Liste steht, prüfe sie einmal als Ganzes – drei Faustregeln machen
+einseitige Recherche sichtbar, bevor es die Gutachter:innen tun:
+
+- [ ] **Dominiert ein Quellentyp** (≥ ¾ der Liste)? → Mix erweitern; nur
+      Webquellen oder nur Kommentare fällt auf.
+- [ ] **Stammen ≥ 4 Quellen von derselben Autorenschaft?** → Du hängst an
+      einer Denkschule. Gezielt Gegenpositionen suchen.
+- [ ] **Liegen (bei ≥ 8 Quellen) alle in einer Spanne von ~2 Jahren?** →
+      Ältere Grundlagenwerke bzw. den aktuellen Stand ergänzen – je nach dem,
+      was fehlt.
 
 ### Quellenqualität bewerten (FOM-Kriterien, KEL-Leitfaden)
 
