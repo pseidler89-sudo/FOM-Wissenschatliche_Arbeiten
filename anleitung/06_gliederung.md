@@ -87,8 +87,14 @@ beantwortet – ohne sie schon zu beantworten. So entsteht Sog, ohne dass du
 - **Strukturvorschlag:** „Erstelle eine Gliederung für eine [Arbeitstyp] zum
   Thema X. Pro Kapitel 2–3 Sätze Ziel. Logik: Problem–Grundlagen–Analyse–
   Bewertung–Fazit.“ → als **Startpunkt**, nicht als Endprodukt.
-- **Stresstest:** „Beantwortet diese Gliederung wirklich meine Forschungsfrage?
-  Wo sind Lücken oder Redundanzen? Sei kritisch.“
+- **Roter-Faden-Check:** Lass die Gliederung systematisch gegen die
+  Forschungsfrage prüfen – logischer Aufbau, Fokus, Übergänge, Gewichtung,
+  Kohärenz zwischen Einleitung und Fazit, mit Ampel-Gesamturteil. Der
+  komplette Prompt steht in
+  [`vorlagen/recherche-prompts.md`](../vorlagen/recherche-prompts.md)
+  (Abschnitt „Roter-Faden-Check“). Er lohnt sich **zweimal**: jetzt gegen die
+  nackte Gliederung – und in Phase 8 noch einmal über die geschriebenen
+  Kapitel.
 - **Quellen-Mapping:** Lass dir helfen, deine Quellenliste den Kapiteln
   zuzuordnen – aber entscheide selbst.
 
