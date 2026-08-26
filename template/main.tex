@@ -6,32 +6,32 @@
 \documentclass[12pt,oneside,titlepage,listof=totoc,bibliography=totoc]{scrartcl}
 
 % ---------------------------------------------------------------------------
+% Formalia -- MUSS als erstes stehen
+% ---------------------------------------------------------------------------
+% Setzt Raender, Schrift, Zitierstil und die leitfadenspezifischen Sonder-
+% regeln. Einstellen tust du das in formalia/konfig.tex, nicht hier.
+% Diese Zeile muss vor fontspec, geometry und biblatex stehen -- deren
+% Optionen lassen sich nachtraeglich nicht mehr aendern.
+\input{formalia/laden}
+
+% ---------------------------------------------------------------------------
 % Sprache
 % ---------------------------------------------------------------------------
 \usepackage[ngerman]{babel}
 \usepackage[babel,german=quotes]{csquotes}
 
 % ---------------------------------------------------------------------------
-% Schriftart: Times New Roman (Leitfaden: TNR 12pt)
-% TeX Gyre Termes = metrisch identischer TNR-Klon
+% Schriftart -- der Name kommt aus dem Formalia-Profil (TeX Gyre Termes als
+% metrisch identischer Times-New-Roman-Klon bzw. TeX Gyre Heros fuer Arial).
 % ---------------------------------------------------------------------------
 \usepackage{fontspec}
-\setmainfont{TeX Gyre Termes}
+\expandafter\setmainfont\expandafter{\formaliaSchriftHaupt}
 
 % ---------------------------------------------------------------------------
-% Seitengeometrie (Leitfaden S. 15 / Jäger S. 2)
-%   Oben: 4cm, Unten: 2cm, Links: 4cm, Rechts: 2cm
-%   Kopfzeile 2cm vom Rand, Fußzeile 2cm vom Rand
-% ---------------------------------------------------------------------------
-\usepackage[
-  a4paper,
-  left=4cm,
-  right=2cm,
-  top=4cm,
-  bottom=2cm,
-  headheight=14pt,
-  headsep=1cm
-]{geometry}
+% Seitengeometrie -- die Masse kommen aus dem Formalia-Profil
+% (formalia/profil_*.tex). Der breite linke Rand ist Korrektur- und
+% Bindungsrand, deshalb ist er kein Gestaltungsspielraum.
+\usepackage{geometry}
 
 % ---------------------------------------------------------------------------
 % Zeilenabstand 1,5-zeilig (Leitfaden S. 16)
@@ -46,12 +46,13 @@
 \setlength{\parskip}{6pt plus 2pt minus 1pt}
 
 % ---------------------------------------------------------------------------
-% Kopf-/Fußzeile (Seitenzahl oben mittig, Leitfaden S. 3)
+% Kopf-/Fusszeile -- Position der Seitenzahl kommt aus dem Formalia-Profil
 % ---------------------------------------------------------------------------
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[C]{\thepage}
+\edef\formaliaInternkopf{\noexpand\fancyhead[\formaliaSeitenzahlPos]{\noexpand\thepage}}
+\formaliaInternkopf
 \renewcommand{\headrulewidth}{0pt}
 
 % ---------------------------------------------------------------------------
@@ -152,16 +153,13 @@
 \usepackage{xurl}
 \usepackage[
   backend=biber,
-  style=ext-authoryear-ibid,
+  % style und autocite kommen aus dem Formalia-Profil (siehe formalia/laden.tex).
+  % Beides sind Ladeoptionen und liessen sich hier nicht mehr umstellen.
   maxcitenames=3,
   maxbibnames=999,
-  mergedate=false,
   date=iso,
   seconds=true,
   urldate=iso,
-  innamebeforetitle,
-  dashed=false,
-  autocite=footnote,
   doi=false,
   useprefix=true,
   mincrossrefs=1
@@ -202,6 +200,7 @@
 % Metadaten (werden in skripte/meta.tex definiert)
 % ---------------------------------------------------------------------------
 \input{skripte/meta}
+\input{skripte/textbausteine}
 
 % ---------------------------------------------------------------------------
 % Glossar (optional)

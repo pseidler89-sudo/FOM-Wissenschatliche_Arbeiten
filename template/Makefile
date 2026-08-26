@@ -5,13 +5,14 @@
 #   make            -> PDF bauen (main.pdf) via Docker (Tectonic)
 #   make clean      -> Build-Hilfsdateien löschen
 #   make check      -> einfache Qualitätsprüfung (vor jedem Commit)
+#   make formalia-check -> prüft die Formalia gegen FORMALIA.md (vor der Abgabe)
 #   make release    -> versionierte Kopie der PDF in releases/ ablegen
 #   make shell      -> Shell im Docker-Container öffnen (Debugging)
 #
 # Wer kein Docker nutzt: siehe README.md (Overleaf oder lokales Tectonic).
 # =============================================================================
 
-.PHONY: pdf clean check release shell all
+.PHONY: pdf clean check formalia-check release shell all
 
 # Standard: PDF bauen
 pdf:
@@ -35,7 +36,43 @@ check:
 	@echo "=== 4. Leere Fußnoten ==="
 	@! grep -rn 'footnote{}' kapitel/ 2>/dev/null && echo "    OK" || echo "    !! WARNUNG: leere Fußnote"
 	@echo "=== 5. Ich-/Wir-Form (Stichprobe) ==="
-	@! grep -rnwiE 'ich|wir|meiner meinung|unseres erachtens' kapitel/ 2>/dev/null && echo "    OK" || echo "    Hinweis: neutrale, unpersönliche Formulierung prüfen"
+	@# erklaerung.tex und sperrvermerk.tex sind ausgenommen -- die Eigenständig-
+	@# keitserklärung MUSS in der Ich-Form stehen.
+	@! grep -rnwiE 'ich|wir|meiner meinung|unseres erachtens' kapitel/ \
+	    --exclude=erklaerung.tex --exclude=sperrvermerk.tex 2>/dev/null \
+	  && echo "    OK" || echo "    Hinweis: neutrale, unpersönliche Formulierung prüfen"
+
+# Formalia-Prüfung -- vor der Abgabe. Prüft, was maschinell prüfbar ist;
+# alles andere steht in ../vorlagen/review-checkliste.md.
+formalia-check:
+	@echo "=== 1. Umfang des Textteils (Wörter, nur kapitel/) ==="
+	@SOLL=$$(grep -oE '^- \*\*Umfangsvorgabe:\*\*[^0-9]*([0-9]+)' FORMALIA.md 2>/dev/null \
+	         | grep -oE '[0-9]+$$'); \
+	 if [ -n "$$SOLL" ]; then python3 skripte/umfang.py --soll $$SOLL; \
+	 else python3 skripte/umfang.py; fi
+	@echo "=== 2. Gewählter Leitfaden in der Einleitung genannt? ==="
+	@grep -qE 'formaliaLeitfadenSatz|Leitfaden' kapitel/01_einleitung.tex 2>/dev/null \
+	  && echo "    OK" \
+	  || echo "    !! Den gewählten Leitfaden in der Methodik-Passage nennen -- das ist selbst eine Formvorgabe (\\formaliaLeitfadenSatz)"
+	@echo "=== 3. KI-Hilfsmittelverzeichnis ausgefüllt? ==="
+	@if grep -qiE 'Platzhalter|TODO|Beispiel-?Eintrag|XXX' verzeichnisse/ki_verzeichnis.tex 2>/dev/null; then \
+	   echo "    !! WARNUNG: Platzhaltertext im KI-Verzeichnis"; \
+	 else echo "    OK"; fi
+	@echo "=== 4. FORMALIA.md vorhanden und ausgefüllt? ==="
+	@if [ ! -f FORMALIA.md ]; then \
+	   echo "    !! FORMALIA.md fehlt -- Vorlage: ../vorlagen/FORMALIA_VORLAGE.md"; \
+	 elif grep -qE '<[a-zäöü ]+>|TODO' FORMALIA.md; then \
+	   echo "    !! FORMALIA.md enthält noch Platzhalter"; \
+	 else echo "    OK"; fi
+	@echo "=== 5. Alter des Formalia-Profils ==="
+	@for f in formalia/profil_wi.tex formalia/profil_jks.tex; do \
+	   D=$$(grep -oE 'Ausgewertet am[^0-9]*([0-9]{4}-[0-9]{2}-[0-9]{2})' $$f | grep -oE '[0-9]{4}-[0-9]{2}-[0-9]{2}'); \
+	   if [ -n "$$D" ]; then \
+	     A=$$(( ( $$(date +%s) - $$(date -d "$$D" +%s) ) / 86400 )); \
+	     if [ $$A -gt 365 ]; then echo "    !! $$f: seit $$A Tagen nicht geprüft -- aktuelle Fassung aus dem Online-Campus holen"; \
+	     else echo "    OK  $$f ($$A Tage)"; fi; \
+	   fi; \
+	 done
 
 # Versionierte Kopie der fertigen PDF ablegen (statt nur "main.pdf").
 # Ergebnis: releases/main_JJJJMMTT_HHMM_<commit>.pdf

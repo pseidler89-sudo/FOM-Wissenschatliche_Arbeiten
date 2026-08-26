@@ -121,6 +121,50 @@ Die vollständige Abgabe-Checkliste:
 
 ---
 
+## Formalia einstellen
+
+An der FOM gilt nicht ein einziger Leitfaden. Welcher für dich gilt, stellst du
+in [`formalia/konfig.tex`](formalia/konfig.tex) ein — Ränder, Schrift,
+Zitierstil und die leitfadenspezifischen Sonderregeln setzen sich dann selbst.
+
+| Datei | Wofür |
+|:--|:--|
+| `formalia/konfig.tex` | **Hier stellst du ein.** Leitfaden, Zitierstil, Schrift, Overlay |
+| `formalia/profil_wi.tex`, `profil_jks.tex` | die belegten Werte je Leitfaden — normalerweise nicht anfassen |
+| `formalia/profil_eigen.tex` | **Abweichende Vorgaben deiner Prüfenden.** Wird zuletzt geladen, überschreibt alles |
+| `formalia/laden.tex` | die Mechanik — nichts zu ändern |
+
+Zwei Befehle, die dir die Profile bereitstellen:
+
+- `\formaliaQuellenvermerk` — unter selbst erstellte Abbildungen setzen. JKS
+  verlangt „Quelle: Eigene Darstellung", WI verbietet es; der Befehl macht je
+  nach Profil das Richtige.
+- `\formaliaLeitfadenSatz` — nennt den gewählten Leitfaden. Gehört ans Ende der
+  Methodik-Passage in der Einleitung; das ist selbst eine Formvorgabe.
+
+Für häufige Abkürzungen gibt es `skripte/textbausteine.tex`: `\zb`, `\dah`,
+`\ua`, `\vgl`, `\os` setzen das schmale geschützte Leerzeichen, das „z. B."
+korrekt macht und den Zeilenumbruch mitten in der Abkürzung verhindert.
+
+Braucht deine Arbeit einen Sperrvermerk, bindest du `kapitel/sperrvermerk.tex`
+vor dem Inhaltsverzeichnis ein und setzt `\myFirma` in `skripte/meta.tex`.
+
+---
+
+## Formalia prüfen vor der Abgabe
+
+```bash
+make formalia-check
+```
+
+Prüft Umfang (in **Wörtern**, nur `kapitel/` — Fußnoten getrennt ausgewiesen),
+ob der Leitfaden in der Einleitung genannt ist, ob das KI-Verzeichnis ausgefüllt
+ist, ob deine `FORMALIA.md` vollständig ist und ob dein Formalia-Profil noch
+aktuell ist. Die Umfangsvorgabe liest der Check aus `FORMALIA.md`
+(Vorlage: [`../vorlagen/FORMALIA_VORLAGE.md`](../vorlagen/FORMALIA_VORLAGE.md)).
+
+---
+
 ## Herkunft
 
 Diese Vorlage geht auf das

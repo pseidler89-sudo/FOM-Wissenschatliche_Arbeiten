@@ -1,0 +1,131 @@
+% =============================================================================
+% FORMALIA-MASCHINERIE -- hier musst du nichts aendern
+% =============================================================================
+% Diese Datei wird als erstes nach \documentclass geladen. Sie muss VOR
+% fontspec, geometry und biblatex laufen, weil Schrift, Raender und Zitierstil
+% Ladeoptionen dieser Pakete sind und sich nachtraeglich nicht mehr aendern
+% lassen. Genau daran ist ein frueherer Entwurf gescheitert, der die Schalter
+% in skripte/meta.tex legte -- die wird erst kurz vor \begin{document} gelesen.
+%
+% Reihenfolge: Standardwerte -> Leitfadenprofil -> Overlay -> eigene Vorgaben.
+% Was spaeter kommt, gewinnt.
+% =============================================================================
+
+\input{formalia/konfig}
+
+% --- Standardwerte (gelten, bis ein Profil sie ueberschreibt) ----------------
+\def\formaliaLeitfadenName{--}
+\def\formaliaLeitfadenStand{--}
+\def\formaliaGeprueftAm{--}
+
+\def\formaliaRandLinks{4cm}
+\def\formaliaRandRechts{2cm}
+\def\formaliaRandOben{4cm}
+\def\formaliaRandUnten{2cm}
+
+\def\formaliaSchriftHaupt{TeX Gyre Termes}
+\def\formaliaSchriftGroesse{12pt}
+
+\def\formaliaSeitenzahlPos{C}          % C = oben mittig, R = oben rechts
+\def\formaliaBibOpt{style=ext-authoryear-ibid,autocite=footnote,%
+  mergedate=false,innamebeforetitle,dashed=false}
+
+\newif\ifformaliaQuelleEigen           % "Quelle: Eigene Darstellung" verlangt?
+\newif\ifformaliaSperrvermerkImTOC     % Sperrvermerk im Inhaltsverzeichnis?
+\newif\ifformaliaInternetquellenSeparat
+
+% --- Leitfadenprofil laden ---------------------------------------------------
+% Bewusst als explizite Fallunterscheidung statt \input{...\FormaliaLeitfaden}:
+% lesbarer, und ein Tippfehler im Schalter liefert eine klare Fehlermeldung
+% statt "File not found".
+\def\formaliaInternwi{wi}
+\def\formaliaInternjks{jks}
+\ifx\FormaliaLeitfaden\formaliaInternwi
+  \input{formalia/profil_wi}
+\else
+  \ifx\FormaliaLeitfaden\formaliaInternjks
+    \input{formalia/profil_jks}
+  \else
+    \errmessage{[formalia] Unbekannter Leitfaden in formalia/konfig.tex.
+      Erlaubt sind: wi, jks}
+  \fi
+\fi
+
+% --- Zitierstil --------------------------------------------------------------
+\def\formaliaInternfussnote{fussnote}
+\def\formaliaInternauthoryear{authoryear}
+\def\formaliaInternieee{ieee}
+\ifx\FormaliaZitierstil\formaliaInternfussnote
+  \def\formaliaBibOpt{style=ext-authoryear-ibid,autocite=footnote,%
+    mergedate=false,innamebeforetitle,dashed=false}
+\else
+  \ifx\FormaliaZitierstil\formaliaInternauthoryear
+    \def\formaliaBibOpt{style=authoryear,autocite=inline,%
+      mergedate=false,dashed=false}
+  \else
+    \ifx\FormaliaZitierstil\formaliaInternieee
+      \ifx\FormaliaLeitfaden\formaliaInternjks
+        \errmessage{[formalia] Zitierstil ieee ist nach JKS nicht zulaessig.
+          JKS erlaubt Chicago in Fussnoten oder Harvard im Text.}
+      \fi
+      \def\formaliaBibOpt{style=numeric-comp,autocite=inline,sorting=none}
+    \else
+      \errmessage{[formalia] Unbekannter Zitierstil in formalia/konfig.tex.
+        Erlaubt sind: fussnote, authoryear, ieee}
+    \fi
+  \fi
+\fi
+
+% --- Schrift -----------------------------------------------------------------
+\def\formaliaInterntnr{tnr}
+\def\formaliaInternarial{arial}
+\ifx\FormaliaSchrift\formaliaInterntnr
+  \def\formaliaSchriftHaupt{TeX Gyre Termes}
+  \def\formaliaSchriftGroesse{12pt}
+\else
+  \ifx\FormaliaSchrift\formaliaInternarial
+    \def\formaliaSchriftHaupt{TeX Gyre Heros}
+    % WI 11 pt, JKS 11,5 pt -- KOMA kennt keine halben Punkt als Klassenoption,
+    % deshalb wird 11.5pt ueber \KOMAoptions gesetzt.
+    \ifx\FormaliaLeitfaden\formaliaInternwi
+      \def\formaliaSchriftGroesse{11pt}
+    \else
+      \def\formaliaSchriftGroesse{11.5pt}
+    \fi
+  \else
+    \errmessage{[formalia] Unbekannte Schrift in formalia/konfig.tex.
+      Erlaubt sind: tnr, arial}
+  \fi
+\fi
+
+% --- Overlay -----------------------------------------------------------------
+\def\formaliaInternifes{ifes}
+\ifx\FormaliaOverlay\formaliaInternifes
+  \input{formalia/overlay_ifes}
+\fi
+
+% --- Eigene Vorgaben (Pruefende schlagen Leitfaden) --------------------------
+\InputIfFileExists{formalia/profil_eigen}{}{}
+
+% --- Werte an die Pakete uebergeben ------------------------------------------
+% \edef expandiert die Makros JETZT, damit die Pakete fertige Werte sehen.
+\edef\formaliaInterngeo{a4paper,%
+  left=\formaliaRandLinks,right=\formaliaRandRechts,%
+  top=\formaliaRandOben,bottom=\formaliaRandUnten,%
+  headheight=14pt,headsep=1cm}
+\expandafter\PassOptionsToPackage\expandafter{\formaliaInterngeo}{geometry}
+\expandafter\PassOptionsToPackage\expandafter{\formaliaBibOpt}{biblatex}
+
+\edef\formaliaInternfs{\formaliaSchriftGroesse}
+\KOMAoptions{fontsize=\formaliaInternfs}
+
+% --- Helfer fuer den Fliesstext ----------------------------------------------
+% Unter selbst erstellten Abbildungen/Tabellen verwenden. JKS verlangt den
+% Vermerk, WI verbietet ihn ausdruecklich -- dieser Befehl macht das Richtige.
+\newcommand{\formaliaQuellenvermerk}{%
+  \ifformaliaQuelleEigen Quelle: Eigene Darstellung\fi}
+
+% Fuer die Methodik-Passage der Einleitung: den gewaehlten Leitfaden nennen
+% ist selbst eine Formvorgabe.
+\newcommand{\formaliaLeitfadenSatz}{%
+  Die formale Gestaltung folgt \formaliaLeitfadenName\ (\formaliaLeitfadenStand).}
