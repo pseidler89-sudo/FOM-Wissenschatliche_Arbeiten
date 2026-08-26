@@ -60,7 +60,9 @@
 \usepackage{graphicx}
 \graphicspath{{./abbildungen/}}
 \usepackage[table]{xcolor}
-\usepackage{float}   % stellt die Float-Option [H] bereit (exakte Platzierung)
+% floatrow laedt float selbst und stellt damit die Option [H] bereit
+% (exakte Platzierung). Ein zusaetzliches \usepackage{float} bricht den
+% Build ab: "Do not use float package with floatrow."
 \usepackage[capposition=top]{floatrow}
 
 % ---------------------------------------------------------------------------
