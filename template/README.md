@@ -118,3 +118,15 @@ make check     # prüft langid, Anführungszeichen, fehlende Seitenangaben u.a.
 
 Die vollständige Abgabe-Checkliste:
 [`../vorlagen/review-checkliste.md`](../vorlagen/review-checkliste.md).
+
+---
+
+## Herkunft
+
+Diese Vorlage geht auf das
+[FOM-LaTeX-Template von Andy Grunwald](https://github.com/andygrunwald/FOM-LaTeX-Template)
+zurück (MIT, Copyright © 2020 Andreas Grunwald & contributors). Sie wurde
+seither eigenständig weiterentwickelt: Umstellung auf `scrartcl` und einen
+Tectonic-Build, Layout nach FOM-Leitfaden V1.4 (03/2024) und Jäger/Kümpel/Seng
+(01/2024), Fußnoten-Zitierstil, KI-Hilfsmittelverzeichnis, `make check`.
+Beide Copyright-Vermerke stehen in der [LICENSE](../LICENSE).

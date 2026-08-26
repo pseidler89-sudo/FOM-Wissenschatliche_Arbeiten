@@ -1,6 +1,12 @@
 MIT License
 
 Copyright (c) 2026 Patrick Seidler
+Copyright (c) 2020 Andreas Grunwald & contributors
+
+Die LaTeX-Vorlage in template/ geht auf das FOM-LaTeX-Template von Andy
+Grunwald zurueck (https://github.com/andygrunwald/FOM-LaTeX-Template, MIT).
+Sie wurde seither eigenstaendig weiterentwickelt; die Herkunft ist in
+template/README.md beschrieben.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
