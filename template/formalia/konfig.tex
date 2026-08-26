@@ -1,0 +1,47 @@
+% =============================================================================
+% FORMALIA-SCHALTER -- hier stellst du deinen Leitfaden ein
+% =============================================================================
+% An der FOM gibt es nicht DEN einen Leitfaden. Welcher fuer dich gilt, steht
+% in deiner Modulbeschreibung bzw. sagen dir deine Pruefenden. Stelle hier ein,
+% welcher gilt -- die Vorlage setzt Raender, Schrift, Zitierstil und die
+% leitfadenspezifischen Sonderregeln dann automatisch richtig.
+%
+% Hintergrund zu jeder Einstellung: ../anleitung/02_formalia.md
+%
+% WICHTIG: Individuelle Vorgaben deiner Pruefenden haben IMMER Vorrang vor dem
+% Leitfaden. Solche Abweichungen traegst du nicht hier ein, sondern in
+% formalia/profil_eigen.tex -- dann bleibt nachvollziehbar, was Leitfaden ist
+% und was Pruefervorgabe.
+% =============================================================================
+
+% --- Welcher Leitfaden gilt? -------------------------------------------------
+%   wi   = Gestaltung wissenschaftlicher Arbeiten, V1.4 (03/2024)
+%          Wirtschaftsinformatik & Ingenieurwesen
+%   jks  = Formale Gestaltung, Jaeger/Kuempel/Seng (01/2024)
+%          allgemeiner FOM-Standard (Wirtschaft & Recht u. a.)
+\def\FormaliaLeitfaden{jks}
+
+% --- Zitierstil --------------------------------------------------------------
+%   fussnote    = Kurzbeleg in der Fussnote  (JKS-Standard, WI zulaessig)
+%   authoryear  = Harvard/Autor-Jahr im Text (JKS zulaessig, WI zulaessig)
+%   ieee        = numerisch [12]             (nur WI, in der Informatik ueblich)
+%
+% ACHTUNG: Diesen Wert einmal am Anfang festlegen und dann NICHT mehr wechseln.
+% Der Schalter aendert nur die Ausgabe, nicht den Sinn der bereits im Text
+% gesetzten \autocite-Befehle. Ein spaeter Wechsel von fussnote auf authoryear
+% verschiebt saemtliche Belege aus den Fussnoten in den Fliesstext -- das musst
+% du dann sprachlich nacharbeiten.
+\def\FormaliaZitierstil{fussnote}
+
+% --- Schrift -----------------------------------------------------------------
+%   tnr    = Times New Roman 12 pt (Standard beider Leitfaeden)
+%            Gesetzt wird TeX Gyre Termes, ein metrisch identischer freier Klon.
+%   arial  = Arial als zulaessige Alternative (WI 11 pt / JKS 11,5 pt)
+%            Gesetzt wird TeX Gyre Heros, ein metrisch identischer freier Klon.
+\def\FormaliaSchrift{tnr}
+
+% --- Optionales Overlay ------------------------------------------------------
+%   ifes   = zusaetzliche Vorgaben fuer empirische Arbeiten (Gansser u. a.)
+%   kein   = kein Overlay
+% Das Overlay ersetzt den Leitfaden nicht, es ergaenzt ihn.
+\def\FormaliaOverlay{kein}

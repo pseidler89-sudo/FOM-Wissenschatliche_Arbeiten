@@ -20,6 +20,41 @@ Hochschulbereich. Daraus folgen drei Grundsätze, die über allem stehen:
    immer Vorrang** vor dem Leitfaden. Weicht dein:e Erstgutachter:in ab, gilt
    die Abweichung.
 
+### Den Leitfaden in der Vorlage einstellen
+
+Weil es mehrere Leitfäden gibt, hat die Vorlage einen Schalter. Du stellst
+einmal ein, welcher für dich gilt — Ränder, Schrift, Zitierstil und die
+leitfadenspezifischen Sonderregeln setzen sich dann automatisch richtig.
+
+In [`template/formalia/konfig.tex`](../template/formalia/konfig.tex):
+
+```latex
+\def\FormaliaLeitfaden{jks}        % wi | jks
+\def\FormaliaZitierstil{fussnote}  % fussnote | authoryear | ieee
+\def\FormaliaSchrift{tnr}          % tnr | arial
+\def\FormaliaOverlay{kein}         % ifes | kein
+```
+
+Drei Dinge dazu:
+
+1. **Den Zitierstil legst du einmal fest und wechselst ihn nicht mehr.** Der
+   Schalter ändert nur die *Ausgabe*, nicht den Sinn der bereits gesetzten
+   `\autocite`-Befehle. Ein später Wechsel von Fußnote auf Harvard schiebt alle
+   Belege in den Fließtext — das musst du dann sprachlich nacharbeiten.
+2. **Unzulässige Kombinationen brechen den Build ab**, mit einer erklärenden
+   Meldung. `ieee` zusammen mit `jks` etwa geht nicht: JKS erlaubt nur Chicago
+   in Fußnoten oder Harvard im Text.
+3. **Vorgaben deiner Prüfenden gehören nicht in `konfig.tex`**, sondern in
+   [`template/formalia/profil_eigen.tex`](../template/formalia/profil_eigen.tex).
+   Die Datei wird zuletzt geladen und überschreibt alles. So bleibt
+   nachvollziehbar, was Leitfaden ist und was Prüfervorgabe.
+
+Was für *deine* Arbeit gilt, hältst du zusätzlich in einer `FORMALIA.md` fest
+(Vorlage: [`../vorlagen/FORMALIA_VORLAGE.md`](../vorlagen/FORMALIA_VORLAGE.md)).
+`make formalia-check` prüft vor der Abgabe, was maschinell prüfbar ist: Umfang
+in Wörtern, ob der Leitfaden in der Einleitung genannt ist, ob das
+KI-Verzeichnis ausgefüllt ist und ob dein Profil noch aktuell ist.
+
 > **Hol dir die *aktuelle* Fassung deines Leitfadens aus dem FOM Online-Campus.**
 > Leitfäden werden überarbeitet. Diese Anleitung fasst den Stand der FOM-Leit-
 > fäden Wirtschaftsinformatik (V1.4, März 2024) und Jäger/Kümpel/Seng

@@ -1,0 +1,34 @@
+% =============================================================================
+% Textbausteine fuer haeufige Abkuerzungen
+% =============================================================================
+% Warum das wichtig ist: "z. B." wird mit einem SCHMALEN, GESCHUETZTEN
+% Leerzeichen gesetzt. Schreibst du "z. B." mit normalem Leerzeichen, darf
+% LaTeX zwischen "z." und "B." umbrechen -- ein klassischer Typografiefehler,
+% der in der Korrektur auffaellt. Schreibst du "z.B." ohne Leerzeichen, ist es
+% ebenfalls falsch.
+%
+% Benutzung im Fliesstext:   \zb  \dah  \ua  \vgl  \bzw  \ca
+% Vor einem Komma oder Punkt die OL-Variante (ohne folgendes Leerzeichen):
+%   ... \zbol, ...
+%
+% Uebernommen aus dem FOM-LaTeX-Template von Andy Grunwald (MIT) und auf die
+% an der FOM gebraeuchlichen Formen reduziert.
+% =============================================================================
+
+\newcommand{\zbol}{z.\,B.}
+\newcommand{\zb}{\zbol\ }
+\newcommand{\dahol}{d.\,h.}  % \dh ist von LaTeX belegt (Eth-Zeichen), daher \dah
+\newcommand{\dah}{\dahol\ }
+\newcommand{\uaol}{u.\,a.}
+\newcommand{\ua}{\uaol\ }
+\newcommand{\vglol}{Vgl.}
+\newcommand{\vgl}{\vglol\ }
+\newcommand{\bzwol}{bzw.}
+\newcommand{\bzw}{\bzwol\ }
+\newcommand{\caol}{ca.}
+\newcommand{\ca}{\caol\ }
+\newcommand{\ggfol}{ggf.}
+\newcommand{\ggf}{\ggfol\ }
+\newcommand{\os}{o.\,S.}      % ohne Seitenangabe (Online-Quellen)
+\newcommand{\oj}{o.\,J.}      % ohne Jahr
+\newcommand{\ov}{o.\,V.}      % ohne Verfasser

@@ -1,0 +1,33 @@
+% =============================================================================
+% Sperrvermerk -- nur noetig, wenn deine Arbeit unternehmensinterne Daten
+% enthaelt. Einbinden in main.tex vor dem Inhaltsverzeichnis.
+%
+% Die Leitfaeden widersprechen sich hier:
+%   JKS: roemische Seitenzahl UND im Inhaltsverzeichnis
+%   WI : keine Seitenzahl und NICHT im Inhaltsverzeichnis
+% Der Formalia-Schalter macht automatisch das Richtige.
+%
+% \myFirma in skripte/meta.tex setzen.
+% Uebernommen aus dem FOM-LaTeX-Template von Andy Grunwald (MIT) und angepasst.
+% =============================================================================
+\clearpage
+\ifformaliaSperrvermerkImTOC
+  \addcontentsline{toc}{section}{Sperrvermerk}
+\else
+  \thispagestyle{empty}
+\fi
+
+\section*{Sperrvermerk}
+
+Die vorliegende Arbeit mit dem Titel \enquote{\myTitel} enthält
+unternehmensinterne Daten der Firma \myFirma. Sie ist daher nur zur Vorlage
+bei der FOM Hochschule sowie bei den Begutachtenden der Arbeit bestimmt. Für
+die Öffentlichkeit und für dritte Personen darf sie nicht zugänglich sein.
+
+\vspace{4cm}
+
+\noindent
+\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+  \rule[0.5ex]{12em}{0.55pt} & \rule[0.5ex]{12em}{0.55pt} \\
+  (Ort, Datum) & (Eigenhändige Unterschrift) \\
+\end{tabular*}

@@ -7,8 +7,14 @@
 > gegen diese Liste, bevor du ihn übernimmst.
 >
 > **Warum das zählt:** KI-typische Sprache wirkt unwissenschaftlich, aufgebläht
-> und beliebig – und sie macht den Text als KI-generiert erkennbar. Du nutzt KI,
-> aber das Ergebnis soll nach **dir** klingen, nicht nach Modell.
+> und beliebig. Sie sagt inhaltlich wenig, klingt aber nach viel – und genau das
+> kostet in der Bewertung. Du nutzt KI, aber das Ergebnis soll nach **dir**
+> klingen, nicht nach Modell.
+>
+> **Es geht hier nicht darum, KI-Nutzung zu verschleiern.** Die Nutzung gehört
+> ins KI-Hilfsmittelverzeichnis – wahrheitsgemäß und vollständig (siehe
+> [`anleitung/03_ki-werkzeuge.md`](../anleitung/03_ki-werkzeuge.md)). Diese Liste
+> dient der sprachlichen Qualität, nicht der Tarnung.
 >
 > *Quellen & Inspiration: Wikipedia, „Signs of AI writing“ (en) und „Anzeichen
 > für KI-generierte Inhalte“ (de), CC BY-SA 4.0 – hier für den akademischen

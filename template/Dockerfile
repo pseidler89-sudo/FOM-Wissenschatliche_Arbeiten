@@ -1,12 +1,12 @@
 # =============================================================================
 # FOM LaTeX Build Environment – Tectonic (Binary Install)
 # =============================================================================
-FROM debian:bookworm-slim
+FROM debian:trixie-slim
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     curl ca-certificates \
     libfontconfig1 libssl3 \
-    libgraphite2-3 libharfbuzz0b libicu72 \
+    libgraphite2-3 libharfbuzz0b libicu76 \
     fonts-texgyre fontconfig \
     && rm -rf /var/lib/apt/lists/*
 
