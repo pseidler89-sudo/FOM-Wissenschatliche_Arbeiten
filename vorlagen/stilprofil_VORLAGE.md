@@ -13,6 +13,15 @@
 
 - Grundhaltung: sachlich-beschreibend, nicht essayistisch, nicht werbend.
 - Wertende Adjektive nur, wenn der Beleg sie trägt. Pro Aussage höchstens eines.
+- **Unbelegbares nicht behaupten, sondern überführen.** Eine Tatsachen-
+  behauptung über die Wirklichkeit („dafür gibt es keine Anbieter“, „das nutzt
+  niemand“) braucht einen Beleg. Findest du keinen: streichen – oder die
+  Aussage in eine **belegbare** überführen („in der Literatur nicht
+  beschrieben“, „im Berufsrecht nicht ausdrücklich vorgesehen“). Das ist der
+  häufigste Rettungsgriff aus Review-Runden echter Arbeiten.
+- Jede Aussage an ihren Ort: Markt-/Praxisaussagen gehören in das Kapitel, das
+  sie behandelt (und dort belegt) – nicht als Nebenbemerkung in Grundlagen
+  oder Fazit.
 - <!-- Deine Ergänzungen: -->
 
 ## 2. Satzbau & Wortwahl
@@ -66,7 +75,8 @@
 - [ ] Eingangssatz jedes Absatzes sachlich, ohne Wertung?
 - [ ] Genau eine zentrale Aussage, Dreischritt erkennbar?
 - [ ] Wortzahl im Korridor?
-- [ ] Jede Behauptung belegt, jede Zitation mit Seite?
+- [ ] Jede Behauptung belegt – oder in eine belegbare Aussage überführt?
+      Jede Zitation mit Seite?
 - [ ] Keine KI-Floskel aus der Verbotsliste?
 - [ ] Übergang am Ende sachlich (keine rhetorische Frage)?
 - [ ] Build fehlerfrei, `make check` grün?
