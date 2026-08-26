@@ -55,6 +55,13 @@ Was für *deine* Arbeit gilt, hältst du zusätzlich in einer `FORMALIA.md` fest
 in Wörtern, ob der Leitfaden in der Einleitung genannt ist, ob das
 KI-Verzeichnis ausgefüllt ist und ob dein Profil noch aktuell ist.
 
+> **Leitfaden-PDF per KI auswerten:** Das Übertragen der Vorgaben aus deinem
+> offiziellen Leitfaden in `konfig.tex` und `FORMALIA.md` kannst du dir
+> erleichtern: Ein strukturierter Prompt lässt die KI das PDF auswerten und
+> bei **jeder** Angabe offenlegen, ob sie eindeutig ist, Wahlfreiheit lässt
+> oder im Dokument fehlt – inklusive Fundstelle zum Nachschlagen. Prompt und
+> Übertrag: [`vorlagen/leitfaden-extraktion-prompt.md`](../vorlagen/leitfaden-extraktion-prompt.md).
+
 > **Hol dir die *aktuelle* Fassung deines Leitfadens aus dem FOM Online-Campus.**
 > Leitfäden werden überarbeitet. Diese Anleitung fasst den Stand der FOM-Leit-
 > fäden Wirtschaftsinformatik (V1.4, März 2024) und Jäger/Kümpel/Seng
