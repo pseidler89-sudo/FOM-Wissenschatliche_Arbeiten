@@ -93,6 +93,8 @@ nav:
   - Werkzeugkasten:
     - Thesenpapier: vorlagen/THESE_VORLAGE.md
     - KI-Prompts: vorlagen/recherche-prompts.md
+    - KI-Hilfe-Level: vorlagen/ki-hilfe-level.md
+    - Leitfaden-Extraktion: vorlagen/leitfaden-extraktion-prompt.md
     - Recherche-Log: vorlagen/recherche-log_VORLAGE.md
     - Stilprofil: vorlagen/stilprofil_VORLAGE.md
     - KI-Stilmerkmale: vorlagen/ki-stilmerkmale.md
