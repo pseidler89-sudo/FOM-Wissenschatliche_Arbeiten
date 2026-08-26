@@ -103,6 +103,31 @@ prüfbar.
 
 ---
 
+## Wie viel darf die KI tun? Die drei Hilfe-Level
+
+„KI ist Zuarbeiter, nicht Autor“ sagt, **wer** verantwortlich ist – aber noch
+nicht, **wie viel** Zuarbeit du zulässt. Das legst du **vor** jedem KI-Einsatz
+bewusst fest, mit einem von drei Hilfe-Leveln:
+
+| Level | Die KI darf … | Typischer Einsatz |
+|:--:|:--|:--|
+| **1 · Coach** | nur Fragen stellen und auf Probleme zeigen – **keinen** Text vorformulieren | Eigenleistung maximal halten, Review-Runden |
+| **2 · Formulierungshilfe** | einzelne Stellen markieren und 1–2 Alternativen vorschlagen | Standard beim Überarbeiten |
+| **3 · Entwurfshilfe** | ganze Absätze entwerfen oder umformulieren | Entwurfsphase, Schreibblockade – voll kennzeichnungspflichtig |
+
+Das Level sagst du der KI **explizit** an (sonst liefert sie immer die
+Maximalhilfe: fertigen Text), indem du einen kurzen Baustein an deinen Prompt
+anhängst. Die drei kopierfertigen Bausteine, wann welches Level passt und was
+jeweils zu kennzeichnen ist:
+[`vorlagen/ki-hilfe-level.md`](../vorlagen/ki-hilfe-level.md).
+
+Der Nebeneffekt ist prüfungsrelevant: Die Level geben dir die **Sprache für
+das KI-Verzeichnis**. „Claude, Hilfe-Level 2 (Formulierungsvorschläge,
+punktuell übernommen), Kapitel 3–4“ ist eine ehrliche, präzise Angabe –
+„sprachliche Unterstützung“ ist keine.
+
+---
+
 ## Datenschutz & Redlichkeit – kurz, aber wichtig
 
 - **Keine sensiblen Daten** (echte Klarnamen aus Interviews, vertrauliche
@@ -122,6 +147,8 @@ prüfbar.
 - [ ] Du weißt, welches Werkzeug du für Recherche, Volltexte, Struktur und Stil
       nutzt (und hast ggf. Accounts angelegt).
 - [ ] Du hast verstanden: **alles verifizieren, nichts blind übernehmen.**
+- [ ] Du weißt, mit welchem **Hilfe-Level** du arbeitest – und sagst es der KI
+      in jedem Prompt an.
 - [ ] Du führst ein KI-/Recherche-Log.
 
 ---

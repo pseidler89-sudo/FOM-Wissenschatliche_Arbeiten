@@ -98,7 +98,13 @@ du diese Muster aktiv **heraus**redigieren. Orientierung bieten die bekannten
 
 Der zugehörige Review-Prompt (kapitelweise, kopierfertig) liegt in
 [`vorlagen/recherche-prompts.md`](../vorlagen/recherche-prompts.md), Abschnitt
-„Stil-Review“.
+„Stil-Review“. Dort findest du auch die weiterführenden Review-Prompts für den
+Feinschliff: den **Lektor-Check** (Sprache, Struktur, Belege – mit
+Prioritätsampel) und den **Argumentations-Check**, der gezielt nach
+Zirkelschlüssen, falscher Kausalität, unzulässigen Verallgemeinerungen und
+Strohmann-Argumenten sucht – und nach der Frage, wo dein Text **eigene
+Analyse** liefert und wo er Quellen nur wiedergibt. Häng an jeden dieser
+Prompts dein [Hilfe-Level](../vorlagen/ki-hilfe-level.md) an.
 
 ---
 

@@ -40,19 +40,28 @@
 - [ ] Korrekte Typen: Blog/Web = `@online`, Kommentar = `@incollection`, Gesetz = `@legislation`, Urteil = `@jurisdiction`
 - [ ] Online-Quellen: `url` + `urldate`
 - [ ] Urteile: Gericht, Datum, Aktenzeichen, Fundstelle
+- [ ] Amtliche Schreiben (z. B. BMF): Datum **und** Aktenzeichen
 - [ ] Literaturverzeichnis vollständig; Internetquellen separat; jede zitierte Quelle erscheint, keine Leichen
 
 ## Inhalt & Sprache
 
 - [ ] Quellenqualität geprüft (keine Lexika/Wikipedia/Studienarbeiten als Beleg)
+- [ ] Quellen-Bias geprüft: kein Quellentyp dominiert (≥ ¾), keine
+      Autorenschaft mit ≥ 4 Quellen, Zeitspanne nicht auffällig eng
+      (siehe [`anleitung/04_quellenrecherche.md`](../anleitung/04_quellenrecherche.md))
 - [ ] Keine unbelegten Marktzahlen/Statistiken
+- [ ] **Plagiats-/Paraphrase-Check** gelaufen (Prompt in
+      [`recherche-prompts.md`](recherche-prompts.md), Abschnitt 10): zu nahe
+      Paraphrasen neu formuliert, Definitionen/Fakten belegt, Stilbrüche
+      geglättet
 - [ ] Keine Ich-/Wir-/„man“-Form; Präsens; gendergerecht; keine Füllwörter
 - [ ] Keine KI-typischen Floskeln (siehe Stilprofil-Verbotsliste)
 - [ ] Fachbegriffe bei Erstverwendung definiert
 
 ## KI-Redlichkeit
 
-- [ ] KI-Verzeichnis vollständig (Werkzeug, Anbieter, Version, Einsatzzweck)
+- [ ] KI-Verzeichnis vollständig (Werkzeug, Anbieter, Version, Einsatzzweck,
+      Art der Übernahme: wörtlich / angepasst / Inspiration / verworfen)
 - [ ] KI-übernommene Inhalte im Text gekennzeichnet **und** mit Fachliteratur belegt
 - [ ] Prompts in Kurzform im Anhang (WI) bzw. KI-Ausgaben als ZIP (JKS)
 - [ ] Eigenständigkeitserklärung beachtet (Leitfaden-abhängig)

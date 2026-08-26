@@ -55,6 +55,13 @@ Was für *deine* Arbeit gilt, hältst du zusätzlich in einer `FORMALIA.md` fest
 in Wörtern, ob der Leitfaden in der Einleitung genannt ist, ob das
 KI-Verzeichnis ausgefüllt ist und ob dein Profil noch aktuell ist.
 
+> **Leitfaden-PDF per KI auswerten:** Das Übertragen der Vorgaben aus deinem
+> offiziellen Leitfaden in `konfig.tex` und `FORMALIA.md` kannst du dir
+> erleichtern: Ein strukturierter Prompt lässt die KI das PDF auswerten und
+> bei **jeder** Angabe offenlegen, ob sie eindeutig ist, Wahlfreiheit lässt
+> oder im Dokument fehlt – inklusive Fundstelle zum Nachschlagen. Prompt und
+> Übertrag: [`vorlagen/leitfaden-extraktion-prompt.md`](../vorlagen/leitfaden-extraktion-prompt.md).
+
 > **Hol dir die *aktuelle* Fassung deines Leitfadens aus dem FOM Online-Campus.**
 > Leitfäden werden überarbeitet. Diese Anleitung fasst den Stand der FOM-Leit-
 > fäden Wirtschaftsinformatik (V1.4, März 2024) und Jäger/Kümpel/Seng
@@ -123,6 +130,26 @@ Arbeit.
 
 > **Immer mit der Modulbeschreibung / den Prüfenden abgleichen** – der genaue
 > Umfang wird dort festgelegt. Wörter zählen: siehe [09](09_latex-bauen.md).
+
+### Richtwerte für Quellenbasis und Gliederungstiefe
+
+Neben dem Seitenumfang fragen sich alle: *Wie viele Quellen sind genug?*
+Die Leitfäden nennen dazu bewusst keine Zahlen – Qualität vor Quantität. Als
+**Erfahrungswerte** (keine offiziellen Vorgaben, Modulbeschreibung geht vor)
+haben sich bewährt:
+
+| Arbeitstyp | Quellen gesamt | davon Fachartikel (Journals) | davon Monographien / Kommentare | Gliederungstiefe |
+|:--|:--:|:--:|:--:|:--:|
+| Kleine Seminararbeit / Assignment | ab ~5 | ≥ 1 | ≥ 1 | bis 1.1 |
+| Große Seminar-/Hausarbeit | ab ~10 | ≥ 2 | ≥ 2 | bis 1.1.1 |
+| Bachelor-Thesis | ab ~25 | ≥ 8 | ≥ 5 | bis 1.1.1 |
+| Master-Thesis | ab ~40 | ≥ 15 | ≥ 8 | bis 1.1.1.1 |
+
+Die Journal- und Monographien-Spalten sind der eigentliche Punkt: **Der Mix
+zählt mehr als die Summe** (siehe
+[Gutachten-Regel „Breite schlägt Menge“](../vorlagen/gutachten-regeln.md)).
+Eine Bachelor-Thesis mit 30 Webquellen und null Journals fällt auf – 25
+Quellen quer durch Primärliteratur, Journals und Monographien nicht.
 
 ---
 
