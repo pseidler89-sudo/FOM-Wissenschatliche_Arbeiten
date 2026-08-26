@@ -97,6 +97,9 @@ nav:
     - Stilprofil: vorlagen/stilprofil_VORLAGE.md
     - KI-Stilmerkmale: vorlagen/ki-stilmerkmale.md
     - Abgabe-Checkliste: vorlagen/review-checkliste.md
+    - Formalia dieser Arbeit: vorlagen/FORMALIA_VORLAGE.md
+    - Bewertung auswerten: vorlagen/bewertung_VORLAGE.md
+    - Gutachten-Regeln: vorlagen/gutachten-regeln.md
   - LaTeX-Vorlage: template/README.md
   - Mehr:
     - FAQ: FAQ.md

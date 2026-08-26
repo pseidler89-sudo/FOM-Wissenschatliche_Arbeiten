@@ -42,7 +42,7 @@ oder Masterarbeit – **technisch versiert oder nicht.**
 | Ordner | Was drin ist |
 |:--|:--|
 | 📘 **[`anleitung/`](anleitung/00_ueberblick.md)** | Der ganze Prozess in 12 kurzen Kapiteln (das *Warum* und *Wie*) |
-| 📝 **[`vorlagen/`](vorlagen/THESE_VORLAGE.md)** | Kopierfertige Hilfen: Thesenpapier, KI-Prompts, Recherche-Log, Stilprofil, KI-Stilmerkmale-Checkliste, Abgabe-Checkliste |
+| 📝 **[`vorlagen/`](vorlagen/THESE_VORLAGE.md)** | Kopierfertige Hilfen: Thesenpapier, KI-Prompts, Recherche-Log, Stilprofil, KI-Stilmerkmale-Checkliste, Abgabe-Checkliste, Formalia-Steckbrief, Gutachten-Auswertung |
 | 📄 **[`template/`](template/README.md)** | Die fertige, FOM-konforme LaTeX-Vorlage – baut sofort eine saubere PDF |
 
 ---
