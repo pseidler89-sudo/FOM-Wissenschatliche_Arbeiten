@@ -41,14 +41,24 @@ check:
 	@! grep -rnwiE 'ich|wir|meiner meinung|unseres erachtens' kapitel/ \
 	    --exclude=erklaerung.tex --exclude=sperrvermerk.tex 2>/dev/null \
 	  && echo "    OK" || echo "    Hinweis: neutrale, unpersönliche Formulierung prüfen"
-	@echo "=== 6. Normverweise (§, Art., Abs., Rn.) in Fußnoten ==="
-	@# Normverweise gehören in den Fließtext; die Fußnote enthält nur den
-	@# bibliografischen Kurzbeleg (Prüferanmerkung, siehe
-	@# ../vorlagen/gutachten-regeln.md). Ausnahme: Abs./Rn. als Fundstelle
-	@# einer Quelle ohne Seitenzahlen ist erlaubt -- daher Warnung, kein Abbruch.
-	@! grep -rnE '(auto|foot)cite(\[[^]]*\])?\[[^]]*(§|\\S[^a-zA-Z]|Art\.|Abs\.|Rn\.)' kapitel/ 2>/dev/null \
-	  && echo "    OK" \
-	  || echo "    !! WARNUNG: Normverweis in der Fußnote? §/Art. gehören in den Fließtext (Abs./Rn. als Fundstelle einer Onlinequelle ist ok)"
+	@echo "=== 6. Normverweise als Fundstelle in der Fussnote ==="
+	@# Was hier gesucht wird: Faelle, in denen die NORM SELBST die Fundstelle
+	@# der Fussnote ist -- \autocite[Vgl.][Art.~5 Abs.~1]{eu_ai_act}. Der
+	@# Normverweis gehoert in den Fliesstext, die Fussnote traegt den
+	@# bibliographischen Kurzbeleg der Literatur DAZU.
+	@#
+	@# Bewusst NICHT gemeldet werden Fundstellen, die zusaetzlich Rn. oder eine
+	@# Seitenzahl nennen: "\S~2 Rn.~3" ist der uebliche und korrekte Beleg in
+	@# einen Kommentar hinein, "Rn.~37" der korrekte Beleg in ein Urteil.
+	@# Ohne diese Unterscheidung meldet die Pruefung in einer juristischen
+	@# Arbeit dutzendfach richtige Zitate -- und wird dann zu Recht ignoriert.
+	@T=$$(grep -rnoE '(auto|foot)cite(\[[^]]*\])?\[[^]]*(§|\\S~|Art\.)[^]]*\]' kapitel/ 2>/dev/null \
+	      | grep -vE 'Rn\.|S\.~?[0-9]'); \
+	 if [ -z "$$T" ]; then echo "    OK"; else \
+	   echo "$$T" | sed 's|^|    |'; \
+	   echo "    !! WARNUNG: $$(echo "$$T" | wc -l) Stellen -- Norm als Fundstelle der Fussnote."; \
+	   echo "       Richtig: Normverweis in den Fliesstext, die Fussnote belegt die Literatur dazu."; \
+	 fi
 	@echo "=== 7. Quellenmix (Verteilung der Eintragstypen, nur zur Info) ==="
 	@# Breite schlägt Menge: kein Warnwert, aber die Verteilung sollte nicht
 	@# aus einer einzigen Kategorie bestehen (siehe ../vorlagen/gutachten-regeln.md).
