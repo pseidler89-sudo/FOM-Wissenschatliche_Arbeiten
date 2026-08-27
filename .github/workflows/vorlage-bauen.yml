@@ -1,0 +1,171 @@
+# =============================================================================
+# Baut die LaTeX-Vorlage in allen zulaessigen Formalia-Kombinationen.
+#
+# Warum es diesen Lauf gibt: Die Vorlage war von Juni bis August 2026 nicht
+# baubar -- das Basis-Image lieferte eine zu alte glibc fuer das aktuelle
+# Tectonic-Binary, und \usepackage{float} kollidierte mit floatrow. Beides
+# haette ein einziger Build sofort gezeigt. Gemerkt hat es niemand, weil die
+# Vorlage niemand gebaut hat.
+#
+# Der cron-Lauf ist der eigentliche Punkt: Diese Vorlage geht nicht kaputt,
+# weil jemand sie aendert, sondern weil sich die Welt um sie herum aendert --
+# neue Tectonic-Fassungen, neue Basis-Images, neue Paketstaende.
+# =============================================================================
+name: Vorlage bauen
+
+on:
+  push:
+    branches: [main]
+    paths: ["template/**", ".github/workflows/vorlage-bauen.yml"]
+  pull_request:
+    paths: ["template/**", ".github/workflows/vorlage-bauen.yml"]
+  workflow_dispatch:
+  schedule:
+    - cron: "0 5 * * 1"   # montags, damit Verfall von aussen frueh auffaellt
+
+jobs:
+  bauen:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { leitfaden: jks, stil: fussnote,   schrift: tnr,   name: "JKS · Fußnote · Times" }
+          - { leitfaden: wi,  stil: fussnote,   schrift: tnr,   name: "WI · Fußnote · Times" }
+          - { leitfaden: jks, stil: authoryear, schrift: tnr,   name: "JKS · Harvard · Times" }
+          - { leitfaden: wi,  stil: ieee,       schrift: arial, name: "WI · IEEE · Arial" }
+          - { leitfaden: jks, stil: fussnote,   schrift: arial, name: "JKS · Fußnote · Arial" }
+    name: ${{ matrix.name }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Schriften installieren
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq libfontconfig1 fonts-texgyre
+
+      - name: Werkzeuge aus dem Cache
+        id: werkzeuge
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.local/bin/tectonic
+            ~/.local/bin/biber
+          key: latex-werkzeuge-biber2.17-v1
+
+      - name: Werkzeuge installieren
+        if: steps.werkzeuge.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p ~/.local/bin
+          curl --proto '=https' --tlsv1.2 -fsSL --retry 5 --retry-all-errors --retry-delay 5 \
+               https://drop-sh.fullyjustified.net | sh
+          mv tectonic ~/.local/bin/
+          # Biber 2.17 passt zur BibLaTeX-Fassung in Tectonics Bundle.
+          for URL in \
+            "https://sourceforge.net/projects/biblatex-biber/files/biblatex-biber/2.17/binaries/Linux/biber-linux_x86_64.tar.gz/download" \
+            "https://github.com/plk/biber/releases/download/v2.17/biber-linux_x86_64.tar.gz" ; do
+            if curl -sSL --retry 5 --retry-all-errors --retry-delay 5 --max-time 300 "$URL" -o biber.tar.gz \
+               && tar -tzf biber.tar.gz >/dev/null 2>&1; then break; fi
+          done
+          tar -xzf biber.tar.gz && chmod +x biber && mv biber ~/.local/bin/
+
+      - name: Werkzeuge in den PATH
+        run: |
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          chmod +x ~/.local/bin/tectonic ~/.local/bin/biber
+
+      - name: TeX-Ressourcenbundle aus dem Cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/Tectonic
+          key: tectonic-bundle-${{ hashFiles('template/main.tex') }}
+          restore-keys: tectonic-bundle-
+
+      - name: Formalia einstellen
+        working-directory: template
+        run: |
+          sed -i \
+            -e 's/^\\def\\FormaliaLeitfaden{.*}/\\def\\FormaliaLeitfaden{${{ matrix.leitfaden }}}/' \
+            -e 's/^\\def\\FormaliaZitierstil{.*}/\\def\\FormaliaZitierstil{${{ matrix.stil }}}/' \
+            -e 's/^\\def\\FormaliaSchrift{.*}/\\def\\FormaliaSchrift{${{ matrix.schrift }}}/' \
+            formalia/konfig.tex
+          grep '^\\def\\Formalia' formalia/konfig.tex
+
+      - name: PDF bauen
+        working-directory: template
+        run: tectonic -X compile main.tex
+
+      - name: Erwartete Schrift wirklich eingebettet?
+        working-directory: template
+        # Der Schalter soll nicht nur den Build ueberstehen, er soll wirken.
+        run: |
+          ERWARTET=$([ "${{ matrix.schrift }}" = "arial" ] && echo Heros || echo Termes)
+          python3 - "$ERWARTET" <<'PY'
+          import re, sys, zlib
+          erwartet = sys.argv[1]
+          d = open('main.pdf','rb').read()
+          teile = [d]
+          for m in re.finditer(rb'stream\r?\n', d):
+              s = m.end(); e = d.find(b'endstream', s)
+              try: teile.append(zlib.decompress(d[s:e]))
+              except Exception: pass
+          blob = b'\n'.join(teile)
+          gefunden = sorted({n.decode() for n in re.findall(rb'TeXGyre(\w+)', blob)})
+          print("eingebettet:", gefunden)
+          if erwartet not in gefunden:
+              sys.exit(f"FEHLER: TeXGyre{erwartet} erwartet, gefunden {gefunden}")
+          print(f"OK: TeXGyre{erwartet} ist eingebettet")
+          PY
+
+      - name: Qualitaetspruefungen
+        working-directory: template
+        run: make check
+
+  unzulaessige-kombination:
+    # Die Sperre ist Teil des Vertrags: JKS erlaubt IEEE nicht. Wenn der Build
+    # das eines Tages klaglos durchlaesst, ist die Pruefung kaputt -- und das
+    # faellt sonst erst auf, wenn jemand eine formal unzulaessige Arbeit abgibt.
+    runs-on: ubuntu-latest
+    name: JKS + IEEE muss abbrechen
+    steps:
+      - uses: actions/checkout@v5
+      - name: Schriften installieren
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq libfontconfig1 fonts-texgyre
+      - name: Werkzeuge aus dem Cache
+        id: werkzeuge
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.local/bin/tectonic
+            ~/.local/bin/biber
+          key: latex-werkzeuge-biber2.17-v1
+      - name: Werkzeuge installieren
+        if: steps.werkzeuge.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p ~/.local/bin
+          curl --proto '=https' --tlsv1.2 -fsSL --retry 5 --retry-all-errors --retry-delay 5 \
+               https://drop-sh.fullyjustified.net | sh
+          mv tectonic ~/.local/bin/
+          curl -sSL --retry 5 --retry-all-errors --max-time 300 \
+            "https://sourceforge.net/projects/biblatex-biber/files/biblatex-biber/2.17/binaries/Linux/biber-linux_x86_64.tar.gz/download" \
+            -o biber.tar.gz
+          tar -xzf biber.tar.gz && chmod +x biber && mv biber ~/.local/bin/
+      - name: Werkzeuge in den PATH
+        run: |
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          chmod +x ~/.local/bin/tectonic ~/.local/bin/biber
+      - name: Muss fehlschlagen
+        working-directory: template
+        run: |
+          sed -i -e 's/^\\def\\FormaliaLeitfaden{.*}/\\def\\FormaliaLeitfaden{jks}/' \
+                 -e 's/^\\def\\FormaliaZitierstil{.*}/\\def\\FormaliaZitierstil{ieee}/' \
+                 formalia/konfig.tex
+          if tectonic -X compile main.tex > bau.log 2>&1; then
+            echo "::error::JKS + IEEE hat gebaut, haette aber abbrechen muessen. Die Sperre in formalia/laden.tex greift nicht mehr."
+            exit 1
+          fi
+          if ! grep -q "nicht zulaessig" bau.log; then
+            echo "::error::Build ist abgebrochen, aber nicht mit der vorgesehenen Formalia-Meldung. Ursache pruefen:"
+            tail -20 bau.log
+            exit 1
+          fi
+          echo "OK: bricht mit der vorgesehenen Meldung ab."
+          grep -m1 "nicht zulaessig" bau.log
