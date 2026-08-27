@@ -29,7 +29,7 @@
 - [ ] **Jede** Behauptung ist belegt
 - [ ] **Jede** Zitation hat eine Seitenangabe (oder ehrlich o. S. / Rn. / Abs.)
 - [ ] Direkte Zitate in `\enquote{}` ohne „Vgl.“; indirekte mit „Vgl.“
-- [ ] Gesetze/Artikel im Fließtext, Kommentar-Nachweis in der Fußnote
+- [ ] Gesetze/Artikel im Fließtext, Kommentar-Nachweis in der Fußnote (`make check` warnt — in Gutachten wörtlich angemahnt)
 - [ ] Vollbeleg bei Erstnennung, danach Kurzbeleg/ebd. (automatisch)
 - [ ] `\enquote{}` statt `\glqq…\grqq` oder geraden Anführungszeichen
 

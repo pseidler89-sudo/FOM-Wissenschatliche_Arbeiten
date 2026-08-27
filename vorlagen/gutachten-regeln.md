@@ -38,15 +38,64 @@ nicht die Norm selbst.
 Art.~5 Abs.~1 \ac{KI-VO}\autocite[Vgl.][S.~73]{hilgendorf_haertlein_2025}
 ```
 
-*Rechtsnahe Fächer, ab SS 2026. Deckt sich mit der stilübergreifenden FOM-Regel
+Diese Regel ist inzwischen wörtlich belegt — als Anmerkung im Block „Formales“
+eines Gutachtens:
+
+> „Ohne Beanstandung - allein darauf achten, dass §§ nie in Fußnoten gehören“
+
+Stärker kann ein Beleg in dieser Sammlung nicht werden: Das ist keine
+Leitfaden-Auslegung, sondern der Satz, den die Prüfenden selbst unter die
+Bewertung schreiben.
+
+*Rechtsnahe Fächer, WS 2025/26. Deckt sich mit der stilübergreifenden FOM-Regel
 in [`../anleitung/02_formalia.md`](../anleitung/02_formalia.md), Abschnitt 6.*
+
+*Prüfbar: `make check`, Prüfung 6 warnt bei §, Art., Abs. oder Rn. innerhalb
+der Fußnoten-Argumente von `\autocite`/`\footcite`. Warnung statt Abbruch —
+`Abs.`/`Rn.` als Fundstelle einer Quelle ohne Seitenzahlen bleibt legitim
+(siehe nächste Regel).*
 
 ### Seitenangabe ist immer Pflicht
 
 Bei jedem Zitierstil, auch bei IEEE, wo sie international oft entfällt. Ohne
 Seite kein Beleg. Bei Onlinequellen ohne Paginierung: `o. S.`, `Abs.`, `Rn.`
 
-*Prüfbar: `make check` meldet Zitate ohne Seitenangabe.*
+*Prüfbar: `make check`, Prüfung 3 meldet Zitate mit leerem Seiten-Argument.*
+
+---
+
+## Formales
+
+### Auch eine inhaltlich herausragende Arbeit verliert ihre Punkte an der Form
+
+Aus der Notenverteilung eines Gutachtens (rechtsnahes Fach, WS 2025/26): Die
+inhaltliche Darstellung wurde als „extrem tiefgreifend“ und deutlich über dem
+Durchschnitt liegend bewertet — Methoden, Argumentation, Literaturnutzung,
+alles ohne Abzug. Abzüge gab es trotzdem, und zwar ausschließlich bei zwei
+Kriterien, beide im Block „Formales“:
+
+- **Gestaltung** (gemäß Leitfaden zur formalen Gestaltung von Seminar- und
+  Abschlussarbeiten)
+- **Zitierweise in Text und Fußnoten** (Einheitlichkeit, Korrektheit)
+
+Die Lehre daraus: Wenn der Inhalt sitzt, entscheidet die Form darüber, was
+übrig bleibt. Sie ist zugleich der Teil, der sich am billigsten absichern
+lässt, weil er zu großen Teilen maschinell prüfbar ist. Konkret:
+
+- **Gestaltung**: vor der Abgabe die Formvorgaben systematisch gegen den
+  eigenen Leitfaden abgleichen (`FORMALIA.md` ausfüllen, `make formalia-check`
+  laufen lassen, PDF visuell prüfen) — nicht aus der Erinnerung.
+- **Zitierweise**: einen eigenen Durchgang nur für die Zitation einplanen —
+  Einheitlichkeit von Kurzbelegen, „Vgl.“, Seitenangaben und Normverweisen
+  (siehe die Regeln unter [Zitation](#zitation)). `make check` deckt die
+  maschinell greifbaren Fälle ab.
+
+*Rechtsnahe Fächer, WS 2025/26.*
+
+*Teilweise prüfbar: `make check` (Zitierweise, Prüfungen 2–4 und 6) und
+`make formalia-check` (Gestaltung, soweit maschinell greifbar). Der Rest steht
+in der [`review-checkliste.md`](review-checkliste.md), Abschnitte „Formalia“
+und „Zitationen“.*
 
 ---
 
@@ -58,6 +107,9 @@ Sie fassen zusammen, was das Kapitel leistet, und stellen den roten Faden zum
 vorherigen Kapitel her. Gilt nicht für die Einleitung selbst.
 
 *Quelle: Leitfaden Jäger/Kümpel/Seng, Kap. 1.5.1, Fußnote 2.*
+
+*Prüfbar: `make formalia-check`, Prüfung 6 meldet Kapitel, in denen auf die
+Kapitelüberschrift direkt die erste Unterüberschrift folgt.*
 
 ### Den verwendeten Leitfaden in der Einleitung nennen
 
@@ -83,7 +135,11 @@ Belohnt wird ein Mix, nicht eine hohe Zahl:
 Wer nur eine dieser Kategorien nutzt, fällt auf. Als Faustzahl für eine
 Seminararbeit: ~25–30 Quellen, aber die Verteilung zählt mehr als die Summe.
 
-*Rechtsnahe Fächer, ab SS 2026.*
+*Rechtsnahe Fächer, WS 2025/26.*
+
+*Teilweise prüfbar: `make check`, Prüfung 7 zeigt die Verteilung der
+BibLaTeX-Eintragstypen im Literaturverzeichnis — ohne Warnwert, denn ob der
+Mix zum Thema passt, bleibt eine inhaltliche Entscheidung.*
 
 ---
 

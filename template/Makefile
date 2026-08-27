@@ -41,6 +41,19 @@ check:
 	@! grep -rnwiE 'ich|wir|meiner meinung|unseres erachtens' kapitel/ \
 	    --exclude=erklaerung.tex --exclude=sperrvermerk.tex 2>/dev/null \
 	  && echo "    OK" || echo "    Hinweis: neutrale, unpersönliche Formulierung prüfen"
+	@echo "=== 6. Normverweise (§, Art., Abs., Rn.) in Fußnoten ==="
+	@# Normverweise gehören in den Fließtext; die Fußnote enthält nur den
+	@# bibliografischen Kurzbeleg (Prüferanmerkung, siehe
+	@# ../vorlagen/gutachten-regeln.md). Ausnahme: Abs./Rn. als Fundstelle
+	@# einer Quelle ohne Seitenzahlen ist erlaubt -- daher Warnung, kein Abbruch.
+	@! grep -rnE '(auto|foot)cite(\[[^]]*\])?\[[^]]*(§|\\S[^a-zA-Z]|Art\.|Abs\.|Rn\.)' kapitel/ 2>/dev/null \
+	  && echo "    OK" \
+	  || echo "    !! WARNUNG: Normverweis in der Fußnote? §/Art. gehören in den Fließtext (Abs./Rn. als Fundstelle einer Onlinequelle ist ok)"
+	@echo "=== 7. Quellenmix (Verteilung der Eintragstypen, nur zur Info) ==="
+	@# Breite schlägt Menge: kein Warnwert, aber die Verteilung sollte nicht
+	@# aus einer einzigen Kategorie bestehen (siehe ../vorlagen/gutachten-regeln.md).
+	@grep -oE '^@[a-zA-Z]+' literatur/literatur.bib 2>/dev/null | sort | uniq -c | sort -rn | sed 's/^/    /' \
+	  || echo "    (literatur/literatur.bib nicht gefunden)"
 
 # Formalia-Prüfung -- vor der Abgabe. Prüft, was maschinell prüfbar ist;
 # alles andere steht in ../vorlagen/review-checkliste.md.
@@ -73,6 +86,18 @@ formalia-check:
 	     else echo "    OK  $$f ($$A Tage)"; fi; \
 	   fi; \
 	 done
+	@echo "=== 6. Kapitel-Einleitung (2-4 Sätze) vor der ersten Unterüberschrift? ==="
+	@# Zwischen Kapitelüberschrift (\section) und erster \subsection stehen
+	@# 2-4 einleitende Sätze (JKS Kap. 1.5.1) -- gilt nicht für die Einleitung.
+	@FEHLT=0; for f in kapitel/*.tex; do \
+	   case "$$f" in *einleitung*|*erklaerung*|*sperrvermerk*|*titelseite*) continue;; esac; \
+	   awk -v file="$$f" ' \
+	     /\\section\{/  {chap=1; body=0; next} \
+	     chap && /\\subsection\{/ {if (!body) {print "    !! " file ": zwischen \\section und erster \\subsection fehlt die Kapitel-Einleitung"; exit 1} exit 0} \
+	     chap && !/^[[:space:]]*($$|%)/ && !/^\\label/ {body=1} \
+	   ' "$$f" || FEHLT=1; \
+	 done; \
+	 [ $$FEHLT -eq 0 ] && echo "    OK" || true
 
 # Versionierte Kopie der fertigen PDF ablegen (statt nur "main.pdf").
 # Ergebnis: releases/main_JJJJMMTT_HHMM_<commit>.pdf

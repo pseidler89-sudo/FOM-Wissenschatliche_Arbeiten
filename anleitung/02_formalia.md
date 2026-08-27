@@ -53,7 +53,8 @@ Was für *deine* Arbeit gilt, hältst du zusätzlich in einer `FORMALIA.md` fest
 (Vorlage: [`../vorlagen/FORMALIA_VORLAGE.md`](../vorlagen/FORMALIA_VORLAGE.md)).
 `make formalia-check` prüft vor der Abgabe, was maschinell prüfbar ist: Umfang
 in Wörtern, ob der Leitfaden in der Einleitung genannt ist, ob das
-KI-Verzeichnis ausgefüllt ist und ob dein Profil noch aktuell ist.
+KI-Verzeichnis ausgefüllt ist, ob dein Profil noch aktuell ist und ob jedes
+Kapitel seine Kapitel-Einleitung hat.
 
 > **Leitfaden-PDF per KI auswerten:** Das Übertragen der Vorgaben aus deinem
 > offiziellen Leitfaden in `konfig.tex` und `FORMALIA.md` kannst du dir
@@ -186,7 +187,7 @@ Umsetzung → Schluss → Nachspann**.
 
 ✅ Gliederungstiefe (`secnumdepth`/`tocdepth` = 4) ist in der Vorlage gesetzt.
 ⚠️ Die **2–4 Sätze Kapitel-Einleitung** musst **du** schreiben – die
-Chapter-Skelette der Vorlage zeigen, wo.
+Chapter-Skelette der Vorlage zeigen, wo; `make formalia-check` erinnert daran.
 
 ---
 
@@ -237,7 +238,10 @@ Drei Regeln gelten **stilübergreifend an der FOM**:
    (wörtliche)** Zitate in Anführungszeichen **ohne** „Vgl.“.
 3. **Gesetze/Artikel im Fließtext** nennen (z. B. „§ 433 Abs. 2 BGB“,
    „Art. 5 DSGVO“) – **nicht** in die Fußnote. Die Fußnote enthält nur den
-   bibliografischen Kurzbeleg (z. B. den Kommentar mit Seitenzahl).
+   bibliografischen Kurzbeleg (z. B. den Kommentar mit Seitenzahl). Diese
+   Regel wird in Gutachten wörtlich angemahnt (siehe
+   [Gutachten-Regeln](../vorlagen/gutachten-regeln.md)); `make check` warnt
+   bei Normverweisen in Fußnoten-Argumenten.
 
 ✅ Die Vorlage ist auf den **FOM-Fußnotenstil** (`ext-authoryear-ibid`)
 vorkonfiguriert – passend für die meisten FOM-Bereiche. Wie du auf IEEE
