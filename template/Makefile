@@ -69,9 +69,14 @@ check:
 # alles andere steht in ../vorlagen/review-checkliste.md.
 formalia-check:
 	@echo "=== 1. Umfang des Textteils (Wörter, nur kapitel/) ==="
+	@# Das "|| true" ist wichtig: umfang.py meldet per Exit-Code, ob die
+	@# Umfangsvorgabe getroffen ist. Ohne das bricht make hier ab -- und eine
+	@# Arbeit im Entstehen ist IMMER zu kurz. Dann fielen ausgerechnet die
+	@# uebrigen Pruefungen aus, solange man sie am dringendsten braucht.
+	@# Beim direkten Aufruf von skripte/umfang.py bleibt der Exit-Code nutzbar.
 	@SOLL=$$(grep -oE '^- \*\*Umfangsvorgabe:\*\*[^0-9]*([0-9]+)' FORMALIA.md 2>/dev/null \
 	         | grep -oE '[0-9]+$$'); \
-	 if [ -n "$$SOLL" ]; then python3 skripte/umfang.py --soll $$SOLL; \
+	 if [ -n "$$SOLL" ]; then python3 skripte/umfang.py --soll $$SOLL || true; \
 	 else python3 skripte/umfang.py; fi
 	@echo "=== 2. Gewählter Leitfaden in der Einleitung genannt? ==="
 	@grep -qE 'formaliaLeitfadenSatz|Leitfaden' kapitel/01_einleitung.tex 2>/dev/null \
