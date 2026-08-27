@@ -1,6 +1,6 @@
 # 11 · Qualität prüfen & abgeben
 
-> Phase 8. Der Inhalt steht – jetzt entscheidet die **Sorgfalt** über die Note.
+> Der Inhalt steht – jetzt entscheidet die **Sorgfalt** über die Note.
 > Formale Fehler, ein leeres Literaturverzeichnis oder eine vergessene
 > KI-Kennzeichnung kosten leicht eine ganze Notenstufe. Dieses Kapitel ist deine
 > Startbahn zur Abgabe.
@@ -83,11 +83,17 @@ Was genau, sagt dein Leitfaden – die typischen Pflichten:
   **Einsatzzweck** (`verzeichnisse/ki_verzeichnis.tex`).
 - **Lokale Kennzeichnung** im Text, wo KI-Inhalte übernommen wurden (System,
   Version, Datum) – und diese Inhalte **zusätzlich** mit Fachliteratur belegt.
-- **Prompts in Kurzform** im Anhang (WI) bzw. genutzte **KI-Ausgaben als ZIP**
-  mit einreichen (JKS).
-- **Eigenständigkeitserklärung** beachten (WI: beifügen; JKS: ist bei der
-  Anmeldung bestätigt) – inklusive der Versicherung, KI-Inhalte gekennzeichnet
-  zu haben.
+- **Prompts** im Anhang – in Kurzform (WI) oder, wenn deine Prüfenden es
+  verlangen, als **vollständiger Verlauf**; genutzte **KI-Ausgaben als ZIP**
+  mit einreichen (JKS). Das Upload-Formular hat dafür meist ein optionales
+  Feld „Zusatzdokumente“ – nutze es auch für eigene Vorarbeiten und das
+  Recherche-Log.
+- **Eigene Vorarbeiten** (Exposé, Vorstudie, frühere Ausarbeitung) im
+  KI-Verzeichnis oder Anhang benennen – siehe [02](02_formalia.md), Abschnitt 8.
+- **Eigenständigkeitserklärung** beifügen, wenn der Upload keine eigene
+  abfragt – das Formular zeigt oft nur Sperrvermerk und Plagiatshinweis.
+  Sie enthält die Versicherung, KI-Inhalte gekennzeichnet zu haben, **und**
+  Übernahmen aus eigenen Arbeiten deklariert zu haben.
 
 > Hier zahlt sich dein **Recherche-/KI-Log** (aus [04](04_quellenrecherche.md))
 > aus: Du füllst das KI-Verzeichnis aus dem Log, statt am Abgabetag zu raten,
@@ -109,7 +115,7 @@ Was genau, sagt dein Leitfaden – die typischen Pflichten:
 
 ---
 
-## Exit-Kriterium
+## Woran du merkst, dass du fertig bist
 
 - [ ] Checkliste komplett abgehakt, `make check` grün (bzw. manuell geprüft).
 - [ ] KI-Offenlegung vollständig (Verzeichnis, Kennzeichnung, Anhang/ZIP,

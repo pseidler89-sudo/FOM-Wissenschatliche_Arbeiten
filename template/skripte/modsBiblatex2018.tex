@@ -17,3 +17,13 @@
 
 % Online-Quellen: URL anzeigen
 \DeclareFieldFormat[online]{url}{\url{#1}}
+
+% Gerichtsentscheidungen: Datum und Aktenzeichen stehen im Titel ("Urteil vom
+% 09.09.2021 -- I ZR 113/20"), das Jahr im Label. Der Stil haengt sonst das
+% ISO-Datum noch einmal ans Ende des Eintrags. Das Label bleibt erhalten,
+% weil Biber es vor diesem Hook berechnet.
+\AtEveryBibitem{%
+  \ifentrytype{jurisdiction}{%
+    \clearfield{date}\clearfield{year}\clearfield{month}\clearfield{day}%
+  }{}%
+}

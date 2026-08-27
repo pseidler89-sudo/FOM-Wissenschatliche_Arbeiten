@@ -1,6 +1,6 @@
 # 09 · Das LaTeX-Dokument bauen
 
-> Phase 0 *und* 7. Du machst das hier zweimal: **einmal ganz am Anfang** (leere
+> Du machst das hier zweimal: **einmal ganz am Anfang** (leere
 > Vorlage zur PDF bauen – Werkzeug-Test), und **am Ende** (fertige Arbeit). Es
 > gibt drei Wege. Such dir **einen** aus. Du brauchst keine LaTeX-Kenntnisse.
 
@@ -96,6 +96,13 @@ Die FOM gibt Umfänge oft in **Wörtern** an (z. B. Seminararbeit ~4.000).
 - **Online:** [TeXcount](https://app.uio.no/ifi/texcount/online.php) – `.tex`
   hochladen.
 - Gezählt wird der **Textteil** (Kapitel), nicht Verzeichnisse/Anhang.
+- **Aus der PDF statt aus den Quellen:** `./skripte/woerter.sh <erste> <letzte Seite>`
+  zählt die angegebenen PDF-Seiten – so, wie Prüfende zählen, die Überschriften
+  und Fußnoten mitrechnen. In den `.tex`-Dateien steht ein Beleg nur als
+  `\autocite`-Schlüssel; in der PDF steht die ausgeschriebene Fußnote, und die
+  zählt dann mit. `python3 skripte/umfang.py` zählt dagegen aus den Quellen und
+  weist Fußnoten getrennt aus – gut beim Schreiben, nicht für die Angabe auf
+  dem Titelblatt.
 
 ---
 
@@ -132,7 +139,7 @@ optional **LTeX** (Rechtschreib-/Grammatikprüfung für LaTeX).
 
 ---
 
-## Exit-Kriterium
+## Woran du merkst, dass du fertig bist
 
 - [ ] Du hast **einmal am Anfang** die leere Vorlage erfolgreich zur PDF gebaut.
 - [ ] Du weißt, welcher der drei Wege deiner ist.
