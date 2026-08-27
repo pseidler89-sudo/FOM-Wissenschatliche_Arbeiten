@@ -1,6 +1,6 @@
 # 03 · KI-Werkzeuge auswählen und richtig bedienen
 
-> Phase 3. KI kann dir bei einer wissenschaftlichen Arbeit enorm helfen – aber
+> KI kann dir bei einer wissenschaftlichen Arbeit enorm helfen – aber
 > nur, wenn du das **richtige Werkzeug für die richtige Aufgabe** nimmst und die
 > Ergebnisse **immer verifizierst**. Dieses Kapitel ist die Werkzeugkunde. Wie
 > du damit konkret recherchierst, steht in [04](04_quellenrecherche.md) und
@@ -45,16 +45,16 @@ Es gibt nicht „die beste KI“. Es gibt das passende Werkzeug pro Aufgabe.
 
 ## Welches Werkzeug für welche Phase?
 
-```
-Forschungsfrage schärfen      → Claude / ChatGPT           (Sparring, Gegenrede)
-Quellen FINDEN                → Perplexity (Deep Research)  (mit Links!)
-Quellenangaben PRÜFEN         → Perplexity + Originalquelle (juris, beck, EUR-Lex …)
-Lange PDFs durcharbeiten      → NotebookLM / Gemini         (große Texte)
-Zitate aus PDFs extrahieren   → Gemini / Claude             (Seite + Wortlaut)
-Gliedern & strukturieren      → Claude / ChatGPT
-Umformulieren & Stil          → Claude                      (Anti-KI-Klang)
-Gegenlesen / Review           → Claude / Gemini             (kritisch prompten)
-```
+| Aufgabe | Werkzeug | Worauf es ankommt |
+|:--|:--|:--|
+| Forschungsfrage schärfen | Claude / ChatGPT | Sparring, Gegenrede |
+| Quellen finden | Perplexity (Deep Research) | mit Links |
+| Quellenangaben prüfen | Perplexity + Originalquelle (juris, beck, EUR-Lex …) | nie ohne Original |
+| Lange PDFs durcharbeiten | NotebookLM / Gemini | große Texte |
+| Zitate aus PDFs extrahieren | Gemini / Claude | Seite + Wortlaut |
+| Gliedern & strukturieren | Claude / ChatGPT | |
+| Umformulieren & Stil | Claude | Anti-KI-Klang |
+| Gegenlesen / Review | Claude / Gemini | kritisch prompten |
 
 Diese Arbeitsteilung ist kein Dogma, aber sie nutzt die jeweilige Stärke. In
 echten Arbeiten hat sich genau diese Kombination bewährt: **Perplexity für die
@@ -142,7 +142,7 @@ punktuell übernommen), Kapitel 3–4“ ist eine ehrliche, präzise Angabe –
 
 ---
 
-## Exit-Kriterium
+## Woran du merkst, dass du fertig bist
 
 - [ ] Du weißt, welches Werkzeug du für Recherche, Volltexte, Struktur und Stil
       nutzt (und hast ggf. Accounts angelegt).

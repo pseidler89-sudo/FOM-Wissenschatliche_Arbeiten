@@ -1,6 +1,6 @@
 # 07 · Schreiben & Stil
 
-> Phase 6. Jetzt entsteht der Text. Zwei Dinge entscheiden über die Qualität:
+> Jetzt entsteht der Text. Zwei Dinge entscheiden über die Qualität:
 > ein **konsistenter wissenschaftlicher Stil** – und dass der Text **nicht wie
 > von einer KI generiert** klingt, obwohl du KI nutzt. Beides lernst du hier.
 
@@ -144,7 +144,7 @@ Prompts dein [Hilfe-Level](../vorlagen/ki-hilfe-level.md) an.
 
 ---
 
-## Exit-Kriterium
+## Woran du merkst, dass du fertig bist
 
 - [ ] Alle Kapitel sind geschrieben, jeder Absatz ist belegt.
 - [ ] Dein Stilprofil ist angelegt und durchgehalten.

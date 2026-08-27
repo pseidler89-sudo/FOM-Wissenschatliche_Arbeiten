@@ -1,6 +1,6 @@
 # 10 · Versionieren & sichern
 
-> Phase 7. „Zwischenstand_final_final_v3_wirklichfinal.pdf“ kennt jeder. Es geht
+> „Zwischenstand_final_final_v3_wirklichfinal.pdf“ kennt jeder. Es geht
 > besser. Mit **Versionierung** hast du jeden Stand deiner Arbeit sicher, kannst
 > jederzeit zurück und verlierst nie etwas – und du bekommst statt einer einzigen
 > `main.pdf` **nachvollziehbare, datierte PDF-Stände**.
@@ -126,7 +126,7 @@ aus (`.aux`, `.log`, `.bbl`, `.toc` …). Sonst gilt:
 
 ---
 
-## Exit-Kriterium
+## Woran du merkst, dass du fertig bist
 
 - [ ] Deine Arbeit ist versioniert (Overleaf-History **oder** Git+GitHub).
 - [ ] Es gibt ein Cloud-Backup.

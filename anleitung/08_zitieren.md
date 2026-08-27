@@ -1,6 +1,6 @@
 # 08 · Richtig zitieren
 
-> Phase 6, technischer Teil. Zitieren ist der Punkt, an dem Arbeiten am
+> Zitieren ist der Punkt, an dem Arbeiten am
 > häufigsten Note verlieren – durch Kleinigkeiten. Die gute Nachricht: Mit
 > BibLaTeX machst du die Quelle **einmal** richtig, und das Literaturverzeichnis
 > entsteht automatisch und korrekt. Du musst nur die paar Regeln unten kennen.
@@ -87,6 +87,14 @@ Darstellung und die automatische Trennung der Internetquellen.
 **Zusätzlich bei Online-Quellen:** `url` **und** `urldate = {YYYY-MM-DD}`
 (Zugriffsdatum).
 
+**Gerichtsentscheidungen:** Das Gericht gehört ins Feld `author`, in doppelten
+geschweiften Klammern (`author = {{Bundesgerichtshof}}`), damit es als ein
+Name behandelt wird und im Kurzbeleg erscheint („Vgl. Bundesgerichtshof 2021,
+S. 3125“). Steht es nur in `institution`, fehlt es in der Fußnote. Datum und
+Aktenzeichen in den `title` („Urteil vom 09.09.2021 – I ZR 113/20“), die
+Fundstelle in `note`; die Vorlage unterdrückt das sonst doppelt gedruckte
+Datum am Ende des Eintrags.
+
 Fertige, kommentierte Beispiel-Einträge für **jeden** Typ stehen schon in
 [`template/literatur/literatur.bib`](../template/literatur/literatur.bib) – du
 kopierst den passenden und füllst ihn aus.
@@ -157,7 +165,7 @@ umstellen ist lästig.
 
 ---
 
-## Exit-Kriterium
+## Woran du merkst, dass du fertig bist
 
 - [ ] Jede Behauptung hat eine Fußnote mit **Seitenangabe**.
 - [ ] Direkte vs. indirekte Zitate korrekt (Vgl. / kein Vgl.).

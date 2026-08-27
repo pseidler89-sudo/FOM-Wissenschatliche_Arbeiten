@@ -442,7 +442,7 @@ PRÜFE AUF:
 
 AUSGABEFORMAT: Pro problematischer Stelle:
 - 📍 Textstelle (kursiv zitiert)
-- ⚠️ Art des Problems
+- Art des Problems
 - 🛠️ Vorschlag zur Behebung (z. B. "neu paraphrasieren + Beleg", "Quelle
   ergänzen", "als direktes Zitat kennzeichnen")
 - Risiko: 🔴 hoch / 🟡 mittel / 🟢 niedrig

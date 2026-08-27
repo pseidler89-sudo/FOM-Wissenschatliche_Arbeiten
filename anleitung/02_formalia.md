@@ -1,6 +1,6 @@
 # 02 · Formalia verstehen (und warum es sie gibt)
 
-> Phase 2. Hier lernst du **alle** formalen Regeln der FOM kennen – und vor
+> Hier lernst du **alle** formalen Regeln der FOM kennen – und vor
 > allem das *Warum* dahinter. Die gute Nachricht: Die Vorlage in
 > [`template/`](../template/README.md) hat fast alles davon schon korrekt eingebaut. Du
 > musst die Regeln also nicht *umsetzen* – aber du solltest sie *kennen*, denn
@@ -92,7 +92,7 @@ anmerkungen** und (bei gedruckter Abgabe) für die Bindung.
 | Rand **links** | **4 cm** | breiter Korrektur-/Bindungsrand |
 | Rand rechts | 2 cm | (ifes abweichend: mind. 1 cm) |
 
-✅ **Schon in der Vorlage** (`main.tex`, `geometry`-Paket). WI nennt die Maße
+**Schon in der Vorlage** (`main.tex`, `geometry`-Paket). WI nennt die Maße
 „ungefähr“, JKS als „Richtwerte“ – die Vorlage trifft die strengere Lesart.
 
 ---
@@ -109,7 +109,7 @@ ungefähr gleich viel Text bedeuten.
 | Absatz | vor 0 pt, nach 6 pt, **Blocksatz**, Silbentrennung an |
 | Richtwert WI | ca. 37 Zeilen × ca. 60 Zeichen ≈ 2.200 Zeichen/Seite |
 
-✅ **Schon in der Vorlage.** Statt der lizenzpflichtigen Schrift *Times New
+**Schon in der Vorlage.** Statt der lizenzpflichtigen Schrift *Times New
 Roman* nutzt sie *TeX Gyre Termes* – einen **metrisch identischen, freien
 Klon**. Das Ergebnis ist optisch dasselbe. (Deshalb braucht die Vorlage den
 **XeLaTeX**-Compiler, siehe [09](09_latex-bauen.md).)
@@ -131,6 +131,12 @@ Arbeit.
 
 > **Immer mit der Modulbeschreibung / den Prüfenden abgleichen** – der genaue
 > Umfang wird dort festgelegt. Wörter zählen: siehe [09](09_latex-bauen.md).
+>
+> **Und frag, was mitzählt.** Manche Prüfende zählen nur den Fließtext,
+> andere „Fließtext inklusive Kapitelüberschriften und Fußnoten“ – so wörtlich
+> eine Vorgabe im Modul *Wissenschaftliches Arbeiten* (2.000 Wörter ± 10 %).
+> Bei vierzig Fußnoten sind das gut 200 Wörter Unterschied. Zähle dann so,
+> wie gezählt wird – aus der fertigen PDF, nicht aus den Quelldateien.
 
 ### Richtwerte für Quellenbasis und Gliederungstiefe
 
@@ -185,8 +191,8 @@ Umsetzung → Schluss → Nachspann**.
 - Hauptkapitel etwa gleich umfangreich; Grundlagen nicht aufblähen, Hauptteil
   nicht zu kurz.
 
-✅ Gliederungstiefe (`secnumdepth`/`tocdepth` = 4) ist in der Vorlage gesetzt.
-⚠️ Die **2–4 Sätze Kapitel-Einleitung** musst **du** schreiben – die
+Gliederungstiefe (`secnumdepth`/`tocdepth` = 4) ist in der Vorlage gesetzt.
+Aber: Die **2–4 Sätze Kapitel-Einleitung** musst **du** schreiben – die
 Chapter-Skelette der Vorlage zeigen, wo; `make formalia-check` erinnert daran.
 
 ---
@@ -206,12 +212,12 @@ fachspezifische Abkürzungen gibt. **KI-Verzeichnis**, sobald KI genutzt wurde.
 - Das Inhaltsverzeichnis listet sich nicht selbst; Eigenständigkeits­erklärung
   und Titelblatt stehen nicht im Inhaltsverzeichnis.
 
-✅ Der römisch→arabisch-Wechsel und die Verzeichnislogik sind in der Vorlage
+Der römisch→arabisch-Wechsel und die Verzeichnislogik sind in der Vorlage
 eingebaut. Abbildungs-/Tabellenverzeichnis sind **auskommentiert** und werden
 erst eingeschaltet, wenn du Abbildungen/Tabellen hast (Hinweis steht in
 `main.tex`).
 
-⚠️ **Achtung Detail-Widerspruch:** Beim **Sperrvermerk** unterscheiden sich die
+**Detail-Widerspruch:** Beim **Sperrvermerk** unterscheiden sich die
 Leitfäden – WI: keine Seitenzahl, nicht im Inhaltsverzeichnis; JKS: römische
 Seitenzahl, **im** Inhaltsverzeichnis. Richte dich nach *deinem* Leitfaden.
 
@@ -243,11 +249,11 @@ Drei Regeln gelten **stilübergreifend an der FOM**:
    [Gutachten-Regeln](../vorlagen/gutachten-regeln.md)); `make check` warnt
    bei Normverweisen in Fußnoten-Argumenten.
 
-✅ Die Vorlage ist auf den **FOM-Fußnotenstil** (`ext-authoryear-ibid`)
+Die Vorlage ist auf den **FOM-Fußnotenstil** (`ext-authoryear-ibid`)
 vorkonfiguriert – passend für die meisten FOM-Bereiche. Wie du auf IEEE
 umstellst, steht in [08](08_zitieren.md).
 
-> ⚠️ **Echter Widerspruch zwischen den Leitfäden:** Bei selbst erstellten
+> **Echter Widerspruch zwischen den Leitfäden:** Bei selbst erstellten
 > Abbildungen/Tabellen verlangt **JKS** den Vermerk *„Quelle: Eigene
 > Darstellung“*, **WI** verbietet ihn ausdrücklich. → Nach *deinem* Leitfaden
 > richten.
@@ -266,7 +272,7 @@ umstellst, steht in [08](08_zitieren.md).
   Lexika/Wikipedia (Tertiärliteratur). Publikumspresse (Spiegel, Handelsblatt)
   nur sparsam. → Quellenqualität bewerten: [04](04_quellenrecherche.md), Abschnitt KEL.
 
-✅ Die Vorlage trennt **automatisch** in „Literaturverzeichnis“ und
+Die Vorlage trennt **automatisch** in „Literaturverzeichnis“ und
 „Internetquellen“ (über den Quellentyp `@online`). Sortierung und Formatierung
 erledigt BibLaTeX – **du musst nichts per Hand formatieren**, wenn die
 `.bib`-Einträge korrekt sind.
@@ -283,7 +289,9 @@ Kennzeichnung erfolgt **zweistufig**:
 *„… Aussage.“ (Vgl. ChatGPT, Version 4, Zugriff am 01.11.2025)*
 
 **b) Summarisch im KI-Verzeichnis** – alle Werkzeuge mit Einsatzzweck, direkt
-nach dem Literaturverzeichnis.
+nach dem Literaturverzeichnis (die Reihenfolge des Nachspanns ist Leitfaden-
+bzw. Prüfersache, siehe Abschnitt 4; die Vorlage folgt JKS: Anhang →
+Literaturverzeichnis → KI-Verzeichnis).
 
 Wichtige Feinheiten:
 
@@ -294,10 +302,23 @@ Wichtige Feinheiten:
   Literatursuche. JKS verlangt zusätzlich, die genutzten **KI-Ausgaben als ZIP
   (PDF-Ausdrucke)** mit einzureichen.
 - **WI:** Kurzform der **Prompts** in den Anhang.
+- **Prüfervorgaben gehen vor** (Meta-Regel 3). Beispiel aus der Praxis: Im
+  Modul *Wissenschaftliches Arbeiten* verlangte ein Prüfer 2026 den
+  **vollständigen Prompt-Verlauf** im Anhang und kündigte bei fehlender
+  Dokumentation „nicht bestanden“ an. Ob so etwas für dich gilt, steht in
+  der Modulbeschreibung oder den Folien – und in deiner `FORMALIA.md`. Das
+  Recherche-/KI-Log aus [04](04_quellenrecherche.md) deckt beide Fälle ab.
+- **Eigene Vorarbeiten deklarieren.** Was du selbst vorher zum Thema
+  erarbeitet hast – ein Exposé, eine Vorstudie, eine nie eingereichte
+  Ausarbeitung – ist keine zitierfähige Quelle, aber deklarationspflichtig:
+  Die Eigenständigkeitserklärung erfasst ausdrücklich Übernahmen „aus eigenen
+  Arbeiten“. Benenne die Vorarbeit im KI-Verzeichnis oder Anhang, beschreibe
+  ehrlich, was daraus stammt, und lege sie als Zusatzdokument bei, wenn der
+  Upload das erlaubt. Verschweigen ist das Risiko, nicht die Vorarbeit.
 - **Nicht** ins Verzeichnis gehören Rechtschreibprüfung oder Taschenrechner.
 
-✅ Die Vorlage hat `verzeichnisse/ki_verzeichnis.tex` und einen Anhang-Abschnitt
-für Prompts. ⚠️ **Inhalt füllst du selbst** – ehrlich und vollständig.
+Die Vorlage hat `verzeichnisse/ki_verzeichnis.tex` und einen Anhang-Abschnitt
+für Prompts. **Den Inhalt füllst du selbst** – ehrlich und vollständig.
 Mehr: [11 · Qualität & Abgabe](11_qualitaet-und-abgabe.md).
 
 ---
@@ -307,12 +328,15 @@ Mehr: [11 · Qualität & Abgabe](11_qualitaet-und-abgabe.md).
 Titel der Arbeit (größter Schriftgrad), Untertitel (optional), Art der Arbeit,
 Modul, Hochschule + Studiengang + Studienort, Name + Matrikelnummer,
 Erstbetreuer:in, Abgabedatum. **Keine** Privatadresse/Kontaktdaten.
+Manche Prüfende verlangen zusätzlich die **Wortzahl** auf dem Titelblatt –
+dafür gibt es `\myWortzahl` in `skripte/meta.tex`; leer lassen, wenn nicht
+gefordert, dann erscheint die Zeile nicht.
 
 > Für **Abschlussarbeiten** stellt die FOM das Titelblatt **zentral im
 > Online-Campus** bereit – dann dieses verwenden. Für Seminararbeiten erstellst
 > du es selbst.
 
-✅ Alles in der Vorlage – du füllst nur `skripte/meta.tex` aus.
+Alles in der Vorlage – du füllst nur `skripte/meta.tex` aus.
 
 ---
 
@@ -351,7 +375,7 @@ Wo sich die Hauptleitfäden unterscheiden – **richte dich nach deinem Bereich*
 
 ## Was die Vorlage dir abnimmt – und was nicht
 
-| ✅ Erledigt die Vorlage | ⚠️ Machst du selbst |
+| Erledigt die Vorlage | Machst du selbst |
 |:--|:--|
 | Ränder, Schrift, Zeilenabstand, Blocksatz | Leitfaden in der Einleitung nennen |
 | Seitenzahlen römisch→arabisch | 2–4 Sätze Kapitel-Einleitung je Kapitel |

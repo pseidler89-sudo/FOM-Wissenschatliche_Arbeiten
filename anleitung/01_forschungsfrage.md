@@ -1,6 +1,6 @@
 # 01 · Forschungsfrage festlegen
 
-> Phase 1. Bevor du eine einzige Zeile Inhalt schreibst, brauchst du eine
+> Bevor du eine einzige Zeile Inhalt schreibst, brauchst du eine
 > **präzise Forschungsfrage**. Sie steuert alles Weitere: welche Quellen du
 > suchst, wie du gliederst, was am Ende ins Fazit gehört. Eine gute Frage
 > spart dir später Wochen.
@@ -132,7 +132,7 @@ vom Weg abbringt, kommst du hierher zurück.
 
 ---
 
-## Exit-Kriterium
+## Woran du merkst, dass du fertig bist
 
 Diese Phase ist fertig, wenn:
 

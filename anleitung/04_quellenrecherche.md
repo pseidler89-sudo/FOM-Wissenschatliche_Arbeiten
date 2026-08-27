@@ -1,6 +1,6 @@
 # 04 · Quellenrecherche mit KI (aber verifiziert)
 
-> Phase 4. Jetzt baust du die Materialbasis deiner Arbeit auf: eine geprüfte
+> Jetzt baust du die Materialbasis deiner Arbeit auf: eine geprüfte
 > Quellendatenbank in `literatur/literatur.bib`. KI beschleunigt das enorm –
 > aber der entscheidende Schritt bleibt das **Verifizieren gegen das Original**.
 
@@ -185,7 +185,7 @@ Das ist später die Basis fürs Schreiben.
 
 ---
 
-## Exit-Kriterium
+## Woran du merkst, dass du fertig bist
 
 - [ ] `literatur/literatur.bib` enthält ~25–40 **geprüfte** Einträge.
 - [ ] Jeder Eintrag hat `langid` und `date`; Online-Quellen `url` + `urldate`.

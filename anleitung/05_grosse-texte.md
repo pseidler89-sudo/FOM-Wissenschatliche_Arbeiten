@@ -1,6 +1,6 @@
 # 05 · Mit großen Volltexten arbeiten
 
-> Phase 4, zweiter Teil. Du hast jetzt PDFs: Gesetzeskommentare, Studien,
+> Du hast jetzt PDFs: Gesetzeskommentare, Studien,
 > 90-seitige Verordnungen, Lehrbuchkapitel. Diese **Volltexte** mit KI
 > durchzuarbeiten, ohne sich Falschzitate einzufangen, ist eine eigene
 > Disziplin. Hier ist sie.
@@ -124,7 +124,7 @@ du Zugang hast. Transparenz schlägt Schein-Sicherheit.
 
 ---
 
-## Exit-Kriterium
+## Woran du merkst, dass du fertig bist
 
 - [ ] Du weißt, wann du NotebookLM (Quellen befragen), Gemini (langes Dokument)
       und Claude (dauerhafter Kontext) einsetzt.

@@ -277,20 +277,23 @@
 \input{kapitel/04_fazit}
 
 % ============================= NACHSPANN ===================================
+% Reihenfolge nach JKS: Anhang -- Literaturverzeichnis -- KI-Hilfsmittel-
+% verzeichnis (siehe anleitung/02_formalia.md, Abschnitt 4). Verlangen deine
+% Pruefenden eine andere Reihenfolge, tausche die Bloecke hier.
 \newpage
 
+% --- Anhang (Prompts: Kurzform oder vollstaendiger Verlauf, je nach Vorgabe) ---
+\input{anhang/anhang}
+
 % --- Literaturverzeichnis ---
+\newpage
 \printbibliography[nottype=online,heading=bibintoc,title={Literaturverzeichnis}]
 \newpage
 \printbibliography[type=online,heading=subbibliography,title={Internetquellen}]
 
-% --- KI-Verzeichnis (PFLICHT seit 2024) ---
+% --- KI-Hilfsmittelverzeichnis (PFLICHT seit 2024) ---
 \newpage
 \input{verzeichnisse/ki_verzeichnis}
-
-% --- Anhang ---
-\newpage
-\input{anhang/anhang}
 
 % --- Eigenständigkeitserklärung ---
 % Manche Prüfungsämter verlangen die Erklärung digital im Upload-System,

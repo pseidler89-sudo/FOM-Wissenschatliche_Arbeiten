@@ -1,6 +1,6 @@
 # 06 · Gliederung entwerfen
 
-> Phase 5. Aus Forschungsfrage und Quellen wird jetzt ein **Bauplan**: die
+> Aus Forschungsfrage und Quellen wird jetzt ein **Bauplan**: die
 > Gliederung. Sie ist das Skelett, an das du später nur noch Fleisch schreibst.
 > Eine durchdachte Gliederung macht das Schreiben fast leicht – eine
 > schwache macht es zur Qual.
@@ -103,7 +103,7 @@ Reihenfolge begründen können.
 
 ---
 
-## Exit-Kriterium
+## Woran du merkst, dass du fertig bist
 
 - [ ] 4–6 Kapitel mit je 2–3 Sätzen Zweck stehen fest.
 - [ ] Jede Quelle ist mindestens einem Kapitel zugeordnet.
