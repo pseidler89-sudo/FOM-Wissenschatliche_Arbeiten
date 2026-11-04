@@ -23,16 +23,16 @@ Kapitel: committen (siehe [10](10_versionierung.md)).
 > Quellennachweis.
 >
 > **Woher das kommt:** Das ist *keine* Vorschrift aus den FOM-Leitfäden,
-> sondern eine Praxisregel. Vorgeschrieben ist die **Belegpflicht**: Jeder
-> fremde Gedanke muss nachgewiesen werden, egal wo er im Text steht (die
-> genaue Fundstelle in deinem Leitfaden liefert dir der
-> [Leitfaden-Extraktions-Prompt](../vorlagen/leitfaden-extraktion-prompt.md)).
-> Die Absatz-Regel übersetzt diese Pflicht in etwas, das du beim Schreiben und
-> Gegenlesen prüfen kannst: Der Absatz ist die kleinste Einheit deiner
-> Argumentation (ein Gedanke pro Absatz, siehe Absatzlogik unten). Ein Absatz
-> ohne Fußnote wirft beim Lesen sofort die Frage auf: *belegtes Wissen oder
-> eigene Behauptung?* Kann der Absatz das nicht beantworten, wird er als
-> unbelegte Behauptung gelesen – und genau so vermerken es Gutachten.
+> sondern eine Praxisregel. Vorgeschrieben ist die **Belegpflicht** für jede
+> wörtliche oder sinngemäße Übernahme (JKS, Jan. 2024, Kap. 3.1, S. 27; WI
+> V1.4, Kap. 6.2, S. 33 f.). Der WI-Leitfaden zieht daraus ausdrücklich den
+> Umkehrschluss: Eine **fehlende Quelle bedeutet, dass die Passage von dir
+> stammt** (WI V1.4, S. 33). Genau deshalb ist der Absatz die richtige
+> Prüfeinheit: Er ist die kleinste Einheit deiner Argumentation (ein Gedanke
+> pro Absatz, siehe Absatzlogik unten), und eine Fußnote hinter dem letzten
+> Satz belegt laut WI die ganze Passage (WI V1.4, S. 34). Ein Absatz ohne
+> Fußnote wird also als *deine* Aussage gelesen. Ist er das nicht, ist er eine
+> unbelegte Behauptung – und genau so vermerken es Gutachten.
 >
 > **Wann die Regel nicht greift:** Absätze, die erkennbar deine Eigenleistung
 > sind – eigene Analyse, Auswertung eigener Daten, Folgerungen aus bereits
