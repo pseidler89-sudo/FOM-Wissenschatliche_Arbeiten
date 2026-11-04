@@ -3,9 +3,12 @@
 > Dein persönliches Regelwerk für einen konsistenten, wissenschaftlichen –
 > und **nicht** KI-klingenden – Text (Phase 6, siehe
 > [`anleitung/07_schreiben-und-stil.md`](../anleitung/07_schreiben-und-stil.md)).
-> Fülle es aus, **nachdem** du zwei Unterkapitel überarbeitet hast – dann weißt
-> du, wie dein guter Stil aussieht, und schreibst die Regeln daraus ab. Gib das
-> Profil der KI mit, wenn sie für dich umformuliert.
+> Fülle es aus **eigenen Texten, die du gut findest**: alte Arbeiten (vor
+> allem die im Gutachten gelobten Absätze), eigene Exposés oder Berichte – oder,
+> wenn du nichts davon hast, zwei frisch überarbeitete Unterkapitel der
+> aktuellen Arbeit. Dann weißt du, wie dein guter Stil aussieht, und schreibst
+> die Regeln daraus ab. Gib das Profil der KI mit, wenn sie für dich
+> umformuliert.
 
 ---
 
@@ -45,7 +48,8 @@
 
 ## 5. Belege
 
-- Jeder Absatz mindestens eine Fußnote mit Seitenangabe.
+- Jeder Absatz mindestens eine Fußnote mit Seitenangabe (Faustregel; Ausnahme:
+  erkennbar eigene Analyse oder Folgerung).
 - Direkt = `\enquote{}` ohne „Vgl.“; indirekt = mit „Vgl.“.
 
 ## 6. Verbotsliste (meine Anti-Patterns)

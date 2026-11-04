@@ -19,8 +19,27 @@ Beginne mit **Grundlagen/Hauptteil**, nicht mit der Einleitung – die schreibst
 du am Ende um, wenn du weißt, was wirklich drinsteht. Nach jedem fertigen
 Kapitel: committen (siehe [10](10_versionierung.md)).
 
-> **Jeder Absatz braucht mindestens eine Fußnote** mit Quellennachweis. Ein
-> Absatz ohne Beleg ist im Zweifel eine unbelegte Behauptung.
+> **Faustregel: Jeder Absatz braucht mindestens eine Fußnote** mit
+> Quellennachweis.
+>
+> **Woher das kommt:** Das ist *keine* Vorschrift aus den FOM-Leitfäden,
+> sondern eine Praxisregel. Vorgeschrieben ist die **Belegpflicht**: Jeder
+> fremde Gedanke muss nachgewiesen werden, egal wo er im Text steht (die
+> genaue Fundstelle in deinem Leitfaden liefert dir der
+> [Leitfaden-Extraktions-Prompt](../vorlagen/leitfaden-extraktion-prompt.md)).
+> Die Absatz-Regel übersetzt diese Pflicht in etwas, das du beim Schreiben und
+> Gegenlesen prüfen kannst: Der Absatz ist die kleinste Einheit deiner
+> Argumentation (ein Gedanke pro Absatz, siehe Absatzlogik unten). Ein Absatz
+> ohne Fußnote wirft beim Lesen sofort die Frage auf: *belegtes Wissen oder
+> eigene Behauptung?* Kann der Absatz das nicht beantworten, wird er als
+> unbelegte Behauptung gelesen – und genau so vermerken es Gutachten.
+>
+> **Wann die Regel nicht greift:** Absätze, die erkennbar deine Eigenleistung
+> sind – eigene Analyse, Auswertung eigener Daten, Folgerungen aus bereits
+> belegten Aussagen, Überleitungen. Solche Absätze sind gewollt, sie müssen
+> nur sprachlich als Eigenleistung erkennbar sein („Daraus folgt …“, „Die
+> Auswertung zeigt …“). Zahlen, Definitionen und Pauschalaussagen bleiben
+> immer belegpflichtig.
 
 ---
 
@@ -42,9 +61,22 @@ an. Typische Inhalte:
 - **Wortzahl-Korridor** pro Unterkapitel (z. B. 400–700 Wörter).
 - **Verbotsliste** (deine persönlichen Anti-Patterns, siehe unten).
 
-> Das Stilprofil destillierst du am besten **aus deinen eigenen besten Absätzen**:
-> Schreib zwei Unterkapitel, überarbeite sie, bis sie sitzen – und leite daraus
-> die Regeln ab, die du auf den Rest anwendest.
+> Das Stilprofil destillierst du am besten **aus eigenen Texten, die du gut
+> findest**. Dafür musst du nicht bei null anfangen:
+>
+> - **Alte Arbeiten:** frühere Haus- oder Seminararbeiten, besonders die
+>   Absätze, die im Gutachten gelobt wurden oder dir beim Wiederlesen selbst
+>   gefallen.
+> - **Andere eigene Unterlagen:** Exposés, Projektberichte, Berichte aus dem
+>   Job – alles, was in deiner Stimme geschrieben ist und sachlich klingt.
+> - **Neue Absätze:** Hast du noch nichts davon, schreib zwei Unterkapitel der
+>   aktuellen Arbeit und überarbeite sie, bis sie sitzen.
+>
+> Aus diesem Material liest du die Regeln ab (Satzlänge, typische Verben,
+> Absatzaufbau) und wendest sie auf den Rest an. Fremde Texte taugen dabei als
+> Vergleichsmaßstab, nicht als Vorlage: Das Profil soll *deinen* Stil
+> beschreiben, sonst klingt die Arbeit nach jemand anderem – ähnlich wie bei
+> ungeprüftem KI-Text.
 
 ---
 
@@ -146,7 +178,8 @@ Prompts dein [Hilfe-Level](../vorlagen/ki-hilfe-level.md) an.
 
 ## Woran du merkst, dass du fertig bist
 
-- [ ] Alle Kapitel sind geschrieben, jeder Absatz ist belegt.
+- [ ] Alle Kapitel sind geschrieben, jede fremde Aussage ist belegt; Absätze
+      ohne Fußnote sind erkennbar Eigenleistung.
 - [ ] Dein Stilprofil ist angelegt und durchgehalten.
 - [ ] Der Text ist von KI-typischen Mustern bereinigt und klingt nach **dir**.
 - [ ] FOM-Sprachregeln (keine Ich-Form, Präsens, gendergerecht) sind eingehalten.

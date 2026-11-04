@@ -49,8 +49,11 @@ Kurze Antworten auf die häufigsten Fragen. Tiefer geht es in der
     Aktenzeichen, Fundstelle. Siehe [Zitieren](anleitung/08_zitieren.md).
 
 ??? question "Muss jede Aussage belegt sein?"
-    Ja. Jeder Absatz braucht mindestens eine Fußnote mit Seitenangabe. Ohne
-    Stellenangabe kein gültiger Beleg.
+    Jede **fremde** Aussage: ja, und immer mit Seitenangabe. Daraus folgt die
+    Faustregel „mindestens eine Fußnote pro Absatz“. Absätze mit eigener
+    Analyse oder Folgerung dürfen ohne Fußnote stehen, müssen aber als
+    Eigenleistung erkennbar sein. Begründung und Ausnahmen:
+    [Schreiben & Stil](anleitung/07_schreiben-und-stil.md).
 
 ## KI
 
